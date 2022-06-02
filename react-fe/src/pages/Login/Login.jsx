@@ -43,7 +43,7 @@ export default function Login({ setToken }) {
     //   </div>
     // </div>
     <div class="form">
-      <div class="title">Welcome Back!</div>
+      {/* <div class="title">Welcome Back!</div>
       <div class="input-container ic1">
         <input id="firstname" class="input" type="text" placeholder=" " />
         <div class="cut"></div>
@@ -59,7 +59,7 @@ export default function Login({ setToken }) {
         <div class="cut cut-short"></div>
         <label for="email" class="placeholder">Email</label>
       </div>
-      <button type="text" class="submit">submit</button>
+      <button type="text" class="submit">submit</button> */}
     </div>
   )
 }

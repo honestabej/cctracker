@@ -44,7 +44,6 @@ const Header = () => {
         <div className={classes.header__content}>
           <Link to="/" className={classes.header__content__logo}>
             <img className={classes.logo__img} src="/images/cctracker-logo.png" alt=""></img>
-            <span className={classes.logo__txt}>CCTracker</span>
           </Link>
           <nav
             className={`${classes.header__content__nav} ${

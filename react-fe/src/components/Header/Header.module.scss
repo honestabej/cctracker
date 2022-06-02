@@ -2,14 +2,17 @@
 
 .logo {
   &__img {
-    height: 5rem;
-    width: 5rem;
-  }
+    transition: 0.3s ease all;
+    height: 40px;
+    width: 40px;
+    transform: translateY(15%);
 
-  &__txt {
-    padding-left: 0.5rem;
-    vertical-align: middle;
-  }  
+    &:hover {
+      transition: 0.3s ease all;
+      height: 45px;
+      width: 45px;
+    }
+  }
 }
 
 .header {
@@ -100,7 +103,7 @@
           a {
             text-decoration: none;
             color: inherit;
-            padding: 0.75rem 1.25rem;
+            padding: 0.5rem 1rem;
             border-radius: $borderRadius;
             transition: 0.3s ease all;
 
@@ -119,25 +122,25 @@
       button {
         cursor: pointer;
         outline: none;
-        padding: 0.75rem 1.25rem;
+        padding: 0.45rem 0.9rem;
         border-radius: $borderRadius;
         font-size: 1rem;
         font-family: inherit;
-        background: $primary;
-        color: $dark;
+        background: $primaryRed;
+        color: $light;
         border: 1px solid transparent;
         transition: 0.3s ease all;
 
         &:hover {
-            border-color: $primary;
-            background: rgba($primary, 0.1);
-            color: $primary;
+            border-color: $primaryRed;
+            background: rgba($primaryRed, 0.1);
+            color: $light;
         }
 
         &:active {
-            border-color: $primary;
-            background: linear-gradient(rgba($primary, 0.2), rgba($primary, 0.3));
-            color: $primary;
+            border-color: $primaryRed;
+            background: linear-gradient(rgba($primaryRed, 0.2), rgba($primaryRed, 0.3));
+            color: $primaryRed;
         }
       }
 

@@ -109,19 +109,14 @@
   
 // Login box
 .form {
-  max-height: 90%;
-  height: 35rem;
-  max-width: 85%;
-  width: 30rem;
-  border-radius: 1em;
-  // Center Horizontally 
-  margin-left: auto;
-  margin-right: auto;
-  // Center Vertically
   position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  // Vertical positioning
+  top: 5em;
+  height: 35rem;
+  border-radius: 1em;
+  // Horizontal positioning 
+  width: 30em;
+
   // Background Image 
   background: 
       url('../../images/LoginBorderBottom.png'),
