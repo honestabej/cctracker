@@ -29,6 +29,30 @@ export default function Login({ setToken }) {
   }
 
   return(
+    <div className="container">
+      <div className="wrapper">
+        <div className="title">
+          <span>Welcome Back!</span>
+        </div>
+        <form action="#">
+          <div className="row">
+            <i className="fas fa-user" />
+            <input type="text" placeholder="Email" required />
+          </div>
+          <div class="row">
+            <i class="fas fa-lock" />
+            <input type="password" placeholder="Password" required />
+          </div>
+          <div class="pass"><a href="#">Forgot password?</a></div>
+          <div class="row button">
+            <input type="submit" value="Login" />
+          </div>
+          <div class="signup-link">
+            Not a member? <a href="#"> Signup now </a>
+          </div>
+        </form>
+      </div>
+    </div>
     // <div className="login-wrapper">
     //   <div className="login-box">
     //     <div className="img-div">
@@ -42,25 +66,26 @@ export default function Login({ setToken }) {
     //     <button type="text" class="submit">submit</button>
     //   </div>
     // </div>
-    <div class="form">
-      {/* <div class="title">Welcome Back!</div>
-      <div class="input-container ic1">
-        <input id="firstname" class="input" type="text" placeholder=" " />
-        <div class="cut"></div>
-        <label for="firstname" class="placeholder">First name</label>
-      </div>
-      <div class="input-container ic2">
-        <input id="lastname" class="input" type="text" placeholder=" " />
-        <div class="cut"></div>
-        <label for="lastname" class="placeholder">Last name</label>
-      </div>
-      <div class="input-container ic2">
-        <input id="email" class="input" type="text" placeholder=" " />
-        <div class="cut cut-short"></div>
-        <label for="email" class="placeholder">Email</label>
-      </div>
-      <button type="text" class="submit">submit</button> */}
-    </div>
+    
+    // <div class="form">
+    //   <div class="title">Welcome Back!</div>
+    //   <div class="input-container ic1">
+    //     <input id="firstname" class="input" type="text" placeholder=" " />
+    //     <div class="cut"></div>
+    //     <label for="firstname" class="placeholder">First name</label>
+    //   </div>
+    //   <div class="input-container ic2">
+    //     <input id="lastname" class="input" type="text" placeholder=" " />
+    //     <div class="cut"></div>
+    //     <label for="lastname" class="placeholder">Last name</label>
+    //   </div>
+    //   <div class="input-container ic2">
+    //     <input id="email" class="input" type="text" placeholder=" " />
+    //     <div class="cut cut-short"></div>
+    //     <label for="email" class="placeholder">Email</label>
+    //   </div>
+    //   <button type="text" class="submit">submit</button>
+    // </div>
   )
 }
 
