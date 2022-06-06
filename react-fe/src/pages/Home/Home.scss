@@ -40,23 +40,23 @@
   cursor: pointer;
   outline: none;
   padding: 0.75rem 1.25rem;
-  border-radius: $borderRadius calc(#{$borderRadius} * 5);
+  border-radius: $buttonRadius;
   font-size: 1rem;
   font-family: inherit;
-  background: linear-gradient(220deg, $primaryRed, rgba($primaryRed, 0.5));
-  color: $light;
+  background: linear-gradient(220deg, $siteDarkBlue, rgba($siteDarkBlue, 0.5));
+  color: $siteWhite;
   border: 1px solid transparent;
   transition: 0.3s ease all;
 
   &:hover {
-      border-color: $primaryRed;
-      background: rgba($primaryRed, 0.1);
+      border-color: $siteBlue;
+      background: rgba($siteDarkBlue, 0.1);
       font-weight: bolder;
   }
 
   &:active {
-      border-color: $primary;
-      background: linear-gradient(rgba($primaryRed, 0.2), rgba($primaryRed, 0.3));
+      border-color: $siteDark;
+      background: linear-gradient(rgba($siteDarkBlue, 0.2), rgba($siteDarkBlue, 0.3));
       font-weight: bolder;
   }
 }

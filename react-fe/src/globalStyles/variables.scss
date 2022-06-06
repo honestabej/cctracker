@@ -3,14 +3,15 @@
 $Poppins: 'Poppins' sans-serif;
 
 // Site colors
-$dark: rgb(29, 29, 29);
-$light: #fff;
-$primary: rgb(162, 162, 246);
-$primaryRed: #d81f25;
-$primaryBlue: #0d50a1;
-$secondaryOrange: #f4a31f;
-$secondaryBlue: #3592d0;
-$bg: rgb(244, 244, 255);
+$siteWhite: #FFFFFF;
+$siteBlack: #171C24;
+$siteDark: #232D35;
+$siteDarkBlue: #5572A0;
+$siteBlue: #5D9BFC;
+$siteSecondBlue: #3591AE;
+$siteBrown: #9FA2A7;
+$sitePurple: #A899FA;
+$siteLightPurple: #B8BFE9;
 
 // Site spacing
 $spacing-md: 16px;
@@ -18,6 +19,7 @@ $spacing-lg: 32px;
 
 // Border radius
 $borderRadius: 12px;
+$buttonRadius: $borderRadius calc(#{$borderRadius} * 5);
 
 // Header height
 $headerHeight: 60px;

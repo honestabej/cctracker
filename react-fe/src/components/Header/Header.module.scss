@@ -16,7 +16,7 @@
 }
 
 .header {
-  background: $dark;
+  background: $siteBlack;
   width: 100%;
   height: $headerHeight;
   padding: 0 1.5rem;
@@ -28,9 +28,9 @@
 
   &__content {
     overflow: hidden;
-    color: $light;
+    color: $siteWhite;
     margin: 0 auto;
-    max-width: 1920px;
+    max-width: 1250px;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -41,10 +41,10 @@
       font-size: 2rem;
       font-weight: bold;
       text-decoration: none;
-      color: $light;
+      color: $siteWhite;
 
       &:hover {
-        color: $primary;
+        color: $siteDark;
         text-decoration: none;
       }
     }
@@ -61,7 +61,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: rgba($dark, 0.9);
+      background: rgba($siteDark, 0.9);
       backdrop-filter: blur(2px);
       transform: translate(0);
       transition: 0.3s ease transform;
@@ -107,12 +107,12 @@
             transition: 0.3s ease all;
 
             &:hover {
-              background: rgba($light, 0.1);
+              background: rgba($siteWhite, 0.1);
             }
             
             &:active {
               border-radius: calc(#{$borderRadius} + 6px);
-              background: linear-gradient(rgba($light, 0.1), rgba($light, 0.2));
+              background: linear-gradient(rgba($siteWhite, 0.1), rgba($siteWhite, 0.2));
             }
           }
         }
@@ -125,21 +125,21 @@
         border-radius: $borderRadius;
         font-size: 1rem;
         font-family: inherit;
-        background: $primaryRed;
-        color: $light;
+        background: linear-gradient(45deg, rgba($siteBlue, 1), rgba($sitePurple, 1));
+        color: $siteWhite;
         border: 1px solid transparent;
         transition: 0.3s ease all;
 
         &:hover {
-            border-color: $primaryRed;
-            background: rgba($primaryRed, 0.1);
-            color: $light;
+            border-color: $sitePurple;
+            background: rgba($siteBlue, 0.1);
+            color: $siteWhite;
         }
 
         &:active {
-            border-color: $primaryRed;
-            background: linear-gradient(rgba($primaryRed, 0.2), rgba($primaryRed, 0.3));
-            color: $primaryRed;
+            border-color: $siteDarkBlue;
+            background: linear-gradient(45deg, rgba($siteBlue, 1), rgba($sitePurple, 1));
+            color: $siteDarkBlue;
         }
       }
 
@@ -157,7 +157,7 @@
       position: relative;
 
       &:hover {
-        color: $primary;
+        color: $siteDark;
       }
 
       @include breakpoint(md) {
