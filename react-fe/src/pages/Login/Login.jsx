@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './Login.scss';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 async function loginUser(credentials) {
   return fetch('http://localhost:3001/login', {
@@ -35,57 +33,29 @@ export default function Login({ setToken }) {
           <span>Welcome Back!</span>
         </div>
         <form action="#">
-          <div className="row">
+          <div className="input-container">
             <i className="fas fa-user" />
-            <input type="text" placeholder="Email" required />
+            <input class="input" type="text" placeholder=" " required />
+            <div class="cut email"></div>
+            <label class="placeholder">E-Mail</label>
           </div>
-          <div class="row">
+          <div class="input-container">
             <i class="fas fa-lock" />
-            <input type="password" placeholder="Password" required />
+            <input class="input" type="password" placeholder=" " required />
+            <div class="cut password"></div>
+            <label class="placeholder">Password</label>
           </div>
           <div class="pass"><a href="#">Forgot password?</a></div>
-          <div class="row button">
+          <div class="rowLogin button">
             <input type="submit" value="Login" />
           </div>
+          <hr />
           <div class="signup-link">
             Not a member? <a href="#"> Signup now </a>
           </div>
-        </form>
+        </form>        
       </div>
     </div>
-    // <div className="login-wrapper">
-    //   <div className="login-box">
-    //     <div className="img-div">
-    //       <img className="logo-img" src="/images/cctracker-logo.png" alt=""></img>
-    //     </div>
-    //     <div class="input-container">
-    //       <FontAwesomeIcon icon={faUser} swapOpacity className="user-icon" />
-    //       <input id="firstname" class="input" type="text" placeholder=" " />
-    //       <label for="firstname" class="placeholder">First name</label>
-    //     </div>
-    //     <button type="text" class="submit">submit</button>
-    //   </div>
-    // </div>
-    
-    // <div class="form">
-    //   <div class="title">Welcome Back!</div>
-    //   <div class="input-container ic1">
-    //     <input id="firstname" class="input" type="text" placeholder=" " />
-    //     <div class="cut"></div>
-    //     <label for="firstname" class="placeholder">First name</label>
-    //   </div>
-    //   <div class="input-container ic2">
-    //     <input id="lastname" class="input" type="text" placeholder=" " />
-    //     <div class="cut"></div>
-    //     <label for="lastname" class="placeholder">Last name</label>
-    //   </div>
-    //   <div class="input-container ic2">
-    //     <input id="email" class="input" type="text" placeholder=" " />
-    //     <div class="cut cut-short"></div>
-    //     <label for="email" class="placeholder">Email</label>
-    //   </div>
-    //   <button type="text" class="submit">submit</button>
-    // </div>
   )
 }
 

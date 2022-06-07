@@ -125,7 +125,7 @@
         border-radius: $borderRadius;
         font-size: 1rem;
         font-family: inherit;
-        background: linear-gradient(45deg, rgba($siteBlue, 1), rgba($sitePurple, 1));
+        background: $siteGradient;
         color: $siteWhite;
         border: 1px solid transparent;
         transition: 0.3s ease all;
@@ -138,7 +138,7 @@
 
         &:active {
             border-color: $siteDarkBlue;
-            background: linear-gradient(45deg, rgba($siteBlue, 1), rgba($sitePurple, 1));
+            background: $siteGradient;
             color: $siteDarkBlue;
         }
       }
