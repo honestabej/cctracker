@@ -18,7 +18,7 @@ function Home() {
         </div>
       </div>
       <div className="about-container">
-        
+         
       </div>
     </div>
   )
