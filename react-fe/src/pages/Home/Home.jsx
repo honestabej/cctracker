@@ -6,26 +6,21 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
   return (
-    <>
-      <div className="bg">
-        <div className="home-text-area">
-          <div className="home-text-main">
-            Start letting your credit build itself
+    <div className="home-container">
+      <div className="main-container">
+        <div className="row">
+          <div className="col-lg-6 uno">
+            UNO
           </div>
-          <div className="home-text-sub">
-            Budget your money while you build your credit
-          </div>
-          <div className="home-btn">
-            <button className="btn-style">
-              Sign Up Now
-            </button>
+          <div className="col-lg-6 dos">
+            DOS
           </div>
         </div>
       </div>
-      <div className="about">
-
+      <div className="about-container">
+        
       </div>
-    </>
+    </div>
   )
 }
 

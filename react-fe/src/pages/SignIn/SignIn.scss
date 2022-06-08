@@ -12,18 +12,18 @@ body {
   overflow: show;
 }
 
-.container {
+.signin-container {
   max-width: 440px;
   padding: 0 20px;
   margin: 50px auto;
 }
 
-// Floating box around login items
+// Floating box around signin items
 .wrapper {
   width: 100%;
   border-radius: 5px;
   background: 
-      url('../../images/LoginBorderBottom.png'),
+      url('../../images/SignInBorderBottom.png'),
       $siteBlack;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,7 +42,7 @@ body {
   justify-content: center;
 }
 
-// Keep login items inside floating box
+// Keep signin items inside floating box
 .wrapper form{
   padding: 10px 15px 25px 15px;
 }
@@ -82,7 +82,7 @@ body {
   width: 73px;
 }
 
-// Spacing for login items
+// Spacing for signin items
 .wrapper form .input-container{
   height: $itemHeight;
   margin-bottom: 30px;
@@ -161,13 +161,13 @@ form .row input:focus{
   text-decoration: underline;
 }
 
-// Alignment of login button
-.wrapper form .rowLogin{
+// Alignment of signin button
+.wrapper form .button-container{
   text-align: center;
 }
 
-// Styling for login button
-.wrapper form .rowLogin input{
+// Styling for signin button
+.wrapper form .button-container input{
   height: $itemHeight;
   width: 85%;
   border-radius: $buttonRadius;
@@ -176,7 +176,7 @@ form .row input:focus{
   transition: all 0.3s ease;
 }
 
-// Login button decoration
+// signin button decoration
 .wrapper form .button input{
   color: #fff;
   font-size: 20px;
@@ -188,7 +188,7 @@ form .row input:focus{
   cursor: pointer;
 }
 
-// Login button hover decoration
+// signin button hover decoration
 form .button input:hover{
   border-color: $sitePurple;
   background: rgba($siteBlue, 0.1);

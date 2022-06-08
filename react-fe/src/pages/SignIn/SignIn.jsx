@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.scss';
+import './SignIn.scss';
 import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
@@ -27,7 +27,7 @@ export default function Login({ setToken }) {
   }
 
   return(
-    <div className="container">
+    <div className="signin-container">
       <div className="wrapper">
         <div className="title">
           <span>Welcome Back!</span>
@@ -46,7 +46,7 @@ export default function Login({ setToken }) {
             <label class="placeholder">Password</label>
           </div>
           <div class="pass"><a href="#">Forgot password?</a></div>
-          <div class="rowLogin button">
+          <div class="button-container button">
             <input type="submit" value="Login" />
           </div>
           <hr />

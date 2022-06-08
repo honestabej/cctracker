@@ -36,7 +36,7 @@ const Header = () => {
 
     const ctaClickHandler = () => {
       menuToggleHandler();
-      history.push("/login");
+      history.push("/signup");
     };
 
     return (
@@ -54,8 +54,11 @@ const Header = () => {
               <li>
                 <a>About</a>
               </li>
+              <li>
+                <a href="/signin">Sign In</a>
+              </li>
             </ul>
-            <button onClick={ctaClickHandler}>Login</button>
+            <button onClick={ctaClickHandler}>Sign Up</button>
           </nav>
           <div className={classes.header__content__toggle}>
               {!menuOpen ? (

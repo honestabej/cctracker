@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from './Home/Home';
 import Signup from './Signup/Signup';
-import Login from './Login/Login';
+import SignIn from './SignIn/SignIn';
 import Dashboard from './Dashboard/Dashboard';
 import Preferences from './Preferences/Preferences';
 
@@ -12,7 +12,7 @@ const Main = () => {
     <Switch> 
       <Route exact path='/' component={Home}></Route>
       <Route exact path='/signup' component={Signup}></Route>
-      <Route exact path='/login' component={Login}></Route>
+      <Route exact path='/signin' component={SignIn}></Route>
       <Route exact path='/dashboard' component={Dashboard}></Route>
       <Route exact path='/preferences' component={Preferences}></Route>
     </Switch>
