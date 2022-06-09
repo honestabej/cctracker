@@ -16,6 +16,7 @@
 }
 
 .header {
+  position: static;
   background: $siteBlack;
   width: 100%;
   height: $headerHeight;
@@ -41,10 +42,15 @@
       font-weight: bold;
       text-decoration: none;
       color: $siteWhite;
+      margin-left: 40px;
 
       &:hover {
         color: $siteDark;
         text-decoration: none;
+      }
+
+      @include breakpoint(md) {
+        margin-left: 0px;
       }
     }
 
@@ -154,6 +160,7 @@
       font-size: 2rem;
       transition: 0.3s ease all;
       position: relative;
+      margin-right: 40px;
 
       &:hover {
         color: $siteDark;

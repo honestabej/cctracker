@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Home.scss';
-import WorldVid from './../../images/home-globe.mp4';
+import Test from './../../images/HomeCCImage.png';
 
 function Home() {
   return (
@@ -24,45 +24,11 @@ function Home() {
                 </div>
               </form>
             </div>
-            
           </div>
           <div className="col-lg-7 pic-view">
-            <div className="night-container">
-              <div class="night">
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-                <div class="shooting_star"></div>
-              </div>
-            </div>
+            <img class="pic" src={Test} />
           </div>
         </div>
-      </div>
-      <div className="about-container">
-        Down here
-        <br />
-        <br />
       </div>
     </div>
   )

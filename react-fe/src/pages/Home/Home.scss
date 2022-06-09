@@ -4,39 +4,79 @@ $inputHeight: 45px;
 $itemWidth: $inputHeight;
 
 .home-container {
-  background-color: green;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
+  background: linear-gradient(45deg, rgba(#5D9BFC, 1), rgba(#A899FA, 1));
+  overflow: hidden;
+  
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    min-width: 300vw;
+    min-height: 300vw;
+    background: radial-gradient(ellipse at bottom, #232D35 65%, #171C24 100%);
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  &:before {
+    bottom: 15vh;
+    border-radius: 45%;
+    animation-duration: 10s;
+  }
+  
+  &:after {
+    bottom: 12vh;
+    opacity: .5;
+    border-radius: 47%;
+    animation-duration: 10s;
+  }
+}
+
+@keyframes rotate {
+  0% {transform: translate(-50%, 0) rotateZ(0deg);}
+  50% {transform: translate(-50%, -2%) rotateZ(180deg);}
+  100% {transform: translate(-50%, 0%) rotateZ(360deg);}
 }
 
 .home-container .main-container {
   z-index: 2;
   margin: auto;
-  background: radial-gradient(ellipse at bottom, $siteDark 65%, $siteBlack 100%);
   height: calc(100vh - 60px);
-  overflow: visible;
+  overflow: hidden;
 }
 
 .main-container .row {
-  margin: auto;
+  margin-top: 5%;
+  margin-left: 40px;
+  margin-right: 40px;
   max-width: $siteWidth;
   height: 100%;
-  align-items: center;
 }
 
 .row .text-view {
-  background-color: green;
+  background-color: orange;
   color: $siteWhite;
   text-align: center;
   position: relative;
   left: 0;
   right: 0;
-  transform: translateY(-50%, -50%);
+  // transform: translateY(-50%, -50%);
   padding:0 1.5em;
 }
 
 .text-view .main {
   font-family: 'Poppins', sans-serif;
-  font-size: 62px;
+  font-size: 66px;
   font-weight: bolder;
+  line-height: 66px;
   color: white;
 }
 
@@ -46,12 +86,13 @@ $itemWidth: $inputHeight;
 }
 
 .text-view .signup {
-  background-color: purple;
+
 }
 
 .signup form .home-input-container{
   display: flex;
   height: $inputHeight;
+  margin-top: 15px;
   margin-bottom: 30px;
   position: relative;
   text-align: left;
@@ -61,11 +102,10 @@ $itemWidth: $inputHeight;
 
 .home-input-container .home-input {
   height: 100%;
-  width: calc(100% - 150px);
+  width: calc(100% - 125px);
   padding-left: 10px;
   border-radius: $borderRadius;
-  background-color: $siteBlue;
-  color: $siteWhite;
+  background-color: $siteBlack;
   border: none;
   outline: none;
   font-size: 16px;
@@ -73,15 +113,13 @@ $itemWidth: $inputHeight;
 }
 
 .home-input-container .home-cut {
-
 }
 
 .home-input-container .home-email {
-
 }
 
 .home-input-container .home-signin-btn {
-  width: 150px;
+  width: 125px;
   margin-left: 5px;
   color: #fff;
   font-size: 20px;
@@ -113,135 +151,15 @@ $itemWidth: $inputHeight;
 }
 
 .row .pic-view {
- 
-}
-
-
-.pic-view .night-container {
-  
-}
-
-$shooting-time: 3000ms;
-
-.night-container .night {
-  justify-content: center;
   position: relative;
-  transform: rotateZ(45deg);
+  background-color: green;
 }
 
-.night .shooting_star {
-  position: absolute;
-  // width: 100px;
-  height: 4px; // Width of streak
-  background: linear-gradient(-45deg, $sitePurple, $siteBlue);
-  border-radius: 9px;
-  filter: drop-shadow(0 0 6px $siteBlue);
-  animation:
-      tail $shooting-time ease-in-out infinite,
-      shooting $shooting-time ease-in-out infinite;
-
-  &::before {
-      content: '';
-      position: absolute;
-      top: calc(50% - 1px);
-      right: 0;
-      // width: 30px;
-      height: 2px;
-      // Color of star
-      background: linear-gradient(-45deg, rgba(0, 0, 255, 0), $sitePurple, rgba(0, 0, 255, 0));
-      transform: translateX(50%) rotateZ(45deg);
-      border-radius: 100%;
-      animation: shining $shooting-time ease-in-out infinite;
-  }
-
-  &::after {
-      // CodePen Error
-      // @extend .shooting_star::before;
-      
-      content: '';
-      position: absolute;
-      top: calc(50% - 1px);
-      right: 0;
-      // width: 30px;
-      height: 2px;
-      // Color of star
-      background: linear-gradient(-45deg, rgba(0, 0, 255, 0), $sitePurple, rgba(0, 0, 255, 0));
-      transform: translateX(50%) rotateZ(45deg);
-      border-radius: 100%;
-      animation: shining $shooting-time ease-in-out infinite;
-      transform: translateX(50%) rotateZ(-45deg);
-  }
-
-  @for $i from 1 through 25 {
-      &:nth-child(#{$i}) {
-          $delay: random(9999) + 0ms;
-          // Positioning
-          top: calc(50% - #{random(400) - 200px});
-          left: calc(50% - #{random(400) + 0px});
-          animation-delay: $delay;
-          // opacity: random(50) / 100 + 0.5;
-          
-          &::before, &::after {
-                  animation-delay: $delay;
-          }
-      }
-  }
-}
-
-// length of tail
-@keyframes tail {
-  0% {
-      width: 0;
-  }
-
-  30% {
-      width: 200px;
-  }
-
-  100% {
-      width: 0;
-  }
-}
-
-// radius of star
-@keyframes shining {
-  0% {
-      width: 0;
-  }
-
-  50% {
-      width: 50px;
-  }
-
-  100% {
-      width: 0;
-  }
-}
-
-// distance of shooting
-@keyframes shooting {
-  0% {
-      transform: translateX(0);
-  }
-
-  100% {
-      transform: translateX(400px);
-  }
-}
-
-// @keyframes sky {
-//     0% {
-//         transform: rotate(45deg);
-//     }
-
-//     100% {
-//         transform: rotate(45 + 360deg);
-//     }
-// }
-
-.home-container .about-container {
-  z-index: 3;
-  overflow: visible;
-  background-color: orange;
-  border-radius: -50% -50% 0 0;
+.pic-view .pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  max-height: 500px;
+  margin-bottom: 50px;
 }
