@@ -28,25 +28,25 @@ export default function Login({ setToken }) {
 
   return(
     <div className="signin-container">
-      <div className="wrapper">
-        <div className="title">
+      <div className="signin-wrapper">
+        <div className="signin-title">
           <span>Welcome Back!</span>
         </div>
         <form action="#">
-          <div className="input-container">
+          <div className="signin-input-container">
             <i className="fas fa-user" />
-            <input class="input" type="text" placeholder=" " required />
-            <div class="cut email"></div>
+            <input class="signin-input" type="text" placeholder=" " required />
+            <div class="signin-cut signin-email"></div>
             <label class="placeholder">E-Mail</label>
           </div>
-          <div class="input-container">
+          <div class="signin-input-container">
             <i class="fas fa-lock" />
-            <input class="input" type="password" placeholder=" " required />
-            <div class="cut password"></div>
+            <input class="signin-input" type="password" placeholder=" " required />
+            <div class="signin-cut signin-password"></div>
             <label class="placeholder">Password</label>
           </div>
-          <div class="pass"><a href="#">Forgot password?</a></div>
-          <div class="button-container button">
+          <div class="signin-pass"><a href="#">Forgot password?</a></div>
+          <div class="signin-button-container signin-button">
             <input type="submit" value="Login" />
           </div>
           <hr />

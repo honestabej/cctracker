@@ -12,11 +12,15 @@ $siteSecondBlue: #3591AE;
 $siteBrown: #9FA2A7;
 $sitePurple: #A899FA;
 $siteLightPurple: #B8BFE9;
+$siteHomeBlue: #040E1E;
 $siteGradient: linear-gradient(45deg, rgba($siteBlue, 1), rgba($sitePurple, 1));
 
 // Site spacing
 $spacing-md: 16px;
 $spacing-lg: 32px;
+$siteWidth: 1350px;
+$inputHeight: 45px;
+$itemWidth: $inputHeight;
 
 // Border radius
 $borderRadius: 12px;

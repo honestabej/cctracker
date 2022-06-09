@@ -19,7 +19,6 @@
   background: $siteBlack;
   width: 100%;
   height: $headerHeight;
-  padding: 0 1.5rem;
 
   @include breakpoint(md) {
     padding: 0 3rem;
@@ -30,7 +29,7 @@
     overflow: hidden;
     color: $siteWhite;
     margin: 0 auto;
-    max-width: 1250px;
+    max-width: $siteWidth;
     height: 100%;
     display: flex;
     justify-content: space-between;
