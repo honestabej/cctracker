@@ -20,6 +20,7 @@ function Home() {
                   <input class="home-input" type="text" placeholder=" " required />
                   <div class="home-cut home-email"></div>
                   <label class="placeholder">E-Mail</label>
+                  <input class="home-signin-btn" type="submit" value="Login" />
                 </div>
               </form>
             </div>
