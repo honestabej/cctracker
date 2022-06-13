@@ -43,7 +43,7 @@ const Header = () => {
       <header className={classes.header}>
         <div className={classes.header__content}>
           <Link to="/" className={classes.header__content__logo}>
-            <img className={classes.logo__img} src="/images/cctracker-logo.png" alt=""></img>
+            <img className={classes.header__content__logo__img} src="/images/cctracker-logo.png" alt=""></img>
           </Link>
           <nav
             className={`${classes.header__content__nav} ${

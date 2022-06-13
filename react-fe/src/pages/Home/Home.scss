@@ -1,7 +1,5 @@
 @import './../../globalStyles/variables.scss';
 
-$inputHeight: 45px;
-$itemWidth: $inputHeight;
 
 .home-container {
   position: relative;
@@ -9,8 +7,8 @@ $itemWidth: $inputHeight;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: calc(100vh - 60px);
-  background: linear-gradient(45deg, rgba(#5D9BFC, 1), rgba(#A899FA, 1));
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgba(#AE67FA, 1), rgba(#F49867, 1));
   overflow: hidden;
   
   &:before,
@@ -20,20 +18,20 @@ $itemWidth: $inputHeight;
     left: 50%;
     min-width: 300vw;
     min-height: 300vw;
-    background: radial-gradient(ellipse at bottom, #232D35 65%, #171C24 100%);
+    background: radial-gradient(ellipse at bottom, #040C18 65%, #042c54 100%);
     animation-name: rotate;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
   
   &:before {
-    bottom: 15vh;
+    bottom: 10vh;
     border-radius: 45%;
     animation-duration: 10s;
   }
   
   &:after {
-    bottom: 12vh;
+    bottom: 5vh;
     opacity: .5;
     border-radius: 47%;
     animation-duration: 10s;
@@ -49,12 +47,12 @@ $itemWidth: $inputHeight;
 .home-container .main-container {
   z-index: 2;
   margin: auto;
-  height: calc(100vh - 60px);
+  height: calc(70vh - 60px);
   overflow: hidden;
 }
 
 .main-container .row {
-  margin-top: 5%;
+  margin-top: 0%;
   margin-left: 40px;
   margin-right: 40px;
   max-width: $siteWidth;
@@ -62,7 +60,7 @@ $itemWidth: $inputHeight;
 }
 
 .row .text-view {
-  background-color: orange;
+  // background-color: orange;
   color: $siteWhite;
   text-align: center;
   position: relative;
@@ -92,8 +90,11 @@ $itemWidth: $inputHeight;
 .signup form .home-input-container{
   display: flex;
   height: $inputHeight;
+  max-width: 500px;
   margin-top: 15px;
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   text-align: left;
   border-radius: $borderRadius;
@@ -152,14 +153,19 @@ $itemWidth: $inputHeight;
 
 .row .pic-view {
   position: relative;
-  background-color: green;
+  // background-color: green;
+  display: none;
+
+  @include home-breakpoint(md) {
+    display:flex;
+  }
 }
 
 .pic-view .pic {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 350px;
+  max-height: 260px;
   margin-bottom: 50px;
 }

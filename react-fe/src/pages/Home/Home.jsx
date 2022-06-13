@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Home.scss';
-import Test from './../../images/HomeCCImage.png';
+import Test from './../../images/HomeImg.png';
 
 function Home() {
   return (
     <div className="home-container">
       <div className="main-container">
         <div className="row">
-          <div className="col-lg-5 text-view">
+          <div className="col-lg-7 text-view">
             <div className="main">
               This will be the main title text area
             </div>
@@ -25,7 +25,7 @@ function Home() {
               </form>
             </div>
           </div>
-          <div className="col-lg-7 pic-view">
+          <div className="col-lg-5 pic-view">
             <img class="pic" src={Test} />
           </div>
         </div>

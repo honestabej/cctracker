@@ -27,12 +27,21 @@ $borderRadius: 12px;
 $buttonRadius: $borderRadius calc(#{$borderRadius} * 5);
 
 // Header height
-$headerHeight: 60px;
+$headerHeight: 70px;
 
 @mixin breakpoint($point) {
     @if $point == md {
         // 768px
         @media(min-width: 48em) {
+            @content;
+        }
+    }
+}
+
+@mixin home-breakpoint($point) {
+    @if $point == md {
+        // 768px
+        @media(min-width: 881px) {
             @content;
         }
     }

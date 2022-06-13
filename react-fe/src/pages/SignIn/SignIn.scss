@@ -1,22 +1,40 @@
 @import './../../globalStyles/variables.scss';
 
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+.signin-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 70px);
   font-family: 'Poppins', sans-serif;
   background: $siteDark;
   overflow: show;
 }
 
-.signin-container {
-  max-width: 440px;
-  padding: 0 20px;
-  margin: 50px auto;
+.test {
+  width: 100%;
+  height: $headerHeight;
+  background-color: $siteBlack;
+  top: 0;
+  
 }
 
-// Floating box around signin items
-.signin-wrapper {
+.signin-container .box-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 450px;
+  padding: 0 20px;
+  margin: 50px auto;
+  transform: translateY(-70px);
+}
+
+// Floating box around sign in items
+.box-container .signin-wrapper {
   width: 100%;
   border-radius: 5px;
   background: 
