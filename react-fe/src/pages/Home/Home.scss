@@ -1,23 +1,16 @@
 @import './../../globalStyles/variables.scss';
 
-
-.home-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
+body {
   background: linear-gradient(45deg, rgba(#AE67FA, 1), rgba(#F49867, 1));
-  overflow: hidden;
+  // overflow: hidden;
   
   &:before,
   &:after {
     content: "";
     position: absolute;
     left: 50%;
-    min-width: 300vw;
-    min-height: 300vw;
+    min-width: 400vw;
+    min-height: 400vw;
     background: radial-gradient(ellipse at bottom, #040C18 65%, #042c54 100%);
     animation-name: rotate;
     animation-iteration-count: infinite;
@@ -38,36 +31,63 @@
   }
 }
 
+.home-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  // @media screen (min-width: ){
+  //   min-height: 100vh;
+  // }
+  
+}
+
 @keyframes rotate {
   0% {transform: translate(-50%, 0) rotateZ(0deg);}
-  50% {transform: translate(-50%, -2%) rotateZ(180deg);}
-  100% {transform: translate(-50%, 0%) rotateZ(360deg);}
+  50% {transform: translate(-50%, -1%) rotateZ(135deg);}
+  100% {transform: translate(-50%, 0%) rotateZ(270deg);}
 }
 
 .home-container .main-container {
   z-index: 2;
-  margin: auto;
   height: calc(70vh - 60px);
-  overflow: hidden;
 }
 
-.main-container .row {
+.main-container hr {
+  margin-top: 30px;
+  height: 20px;
+  border-width: 0;
+  background-color: $siteWhite;
+}
+
+.main-container .home-row {
   margin-top: 0%;
   margin-left: 40px;
   margin-right: 40px;
   max-width: $siteWidth;
   height: 100%;
+
+  @media screen and (min-width: 951px) {
+    display: flex;
+  }
 }
 
-.row .text-view {
-  // background-color: orange;
+.home-row .text-view {
+  background-color: orange;
   color: $siteWhite;
   text-align: center;
   position: relative;
   left: 0;
   right: 0;
-  // transform: translateY(-50%, -50%);
   padding:0 1.5em;
+  width: 60%;
+
+  @media screen and (max-width: 950px) {
+    width: 100%;
+  }
 }
 
 .text-view .main {
@@ -151,13 +171,13 @@
   transition: transform 200ms, color 200ms;
 }
 
-.row .pic-view {
+.home-row .pic-view {
+  background-color: green;
   position: relative;
-  // background-color: green;
-  display: none;
+  width: 40%;
 
-  @include home-breakpoint(md) {
-    display:flex;
+  @media screen and (max-width: 950px) {
+    width: 100%;
   }
 }
 
@@ -165,7 +185,9 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 350px;
-  max-height: 260px;
+  width: 100%;
+  height: 74%;
+  max-width: 400px;
+  max-height: 296px;
   margin-bottom: 50px;
 }

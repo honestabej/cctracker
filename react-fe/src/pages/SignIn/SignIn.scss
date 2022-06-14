@@ -137,7 +137,7 @@
 }
 
 .signin-input:focus ~ .placeholder {
-  color: $siteBlue;
+  color: $sitePurple;
 }
 
 // Icons preceeding input field
@@ -197,21 +197,14 @@
 }
 
 // signin button hover decoration
-form .signin-button input:hover{
+form .signin-button input:hover {
   border-color: $sitePurple;
-  background: rgba($siteBlue, 0.3);
+  background: rgba($sitePurple, 0.3);
   color: $siteWhite;
 }
 
-hr{
-  margin-top: 30px;
-  height: 2px;
-  border-width: 0;
-  background-color: $siteDark;
-}
-
 // Not a member spacing
-.signin-wrapper form .signup-link{
+.signin-wrapper form .signup-link {
   text-align: center;
   color: $siteWhite;
   margin-top: 20px;
@@ -220,13 +213,20 @@ hr{
 }
 
 // Signup now link decoration
-.signin-wrapper form .signup-link a{
+.signin-wrapper form .signup-link a {
   color: $siteBlue;
   font-size: 17px;
   text-decoration: none;
 }
 
 // Signup now link hover decoration
-form .signup-link a:hover{
+form .signup-link a:hover {
   text-decoration: underline;
+}
+
+.signin-wrapper form hr {
+  margin-top: 30px;
+  height: 2px;
+  border-width: 0;
+  background-color: $siteDark;
 }

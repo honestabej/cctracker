@@ -6,14 +6,19 @@ $Poppins: 'Poppins' sans-serif;
 $siteWhite: #FFFFFF;
 $siteBlack: #171C24;
 $siteDark: #232D35;
-$siteDarkBlue: #5572A0;
+$sitePurple: #AE67FA;
+$siteOrange: #F49867;
 $siteBlue: #5D9BFC;
+$siteGradient: linear-gradient(45deg, rgba($sitePurple, 1), rgba($siteOrange, 1));
+
+// Old colors
+$siteDarkBlue: #5572A0;
 $siteSecondBlue: #3591AE;
 $siteBrown: #9FA2A7;
 $sitePurple: #A899FA;
 $siteLightPurple: #B8BFE9;
 $siteHomeBlue: #040E1E;
-$siteGradient: linear-gradient(45deg, rgba($siteBlue, 1), rgba($sitePurple, 1));
+
 
 // Site spacing
 $spacing-md: 16px;

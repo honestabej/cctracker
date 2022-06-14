@@ -6,11 +6,12 @@ function Home() {
   return (
     <div className="home-container">
       <div className="main-container">
-        <div className="row">
-          <div className="col-lg-7 text-view">
+        <div className="home-row">
+          <div className="text-view">
             <div className="main">
               This will be the main title text area
             </div>
+            
             <div className="sub">
               This will be the sub text area
             </div>
@@ -25,10 +26,11 @@ function Home() {
               </form>
             </div>
           </div>
-          <div className="col-lg-5 pic-view">
+          <div className="pic-view">
             <img class="pic" src={Test} />
           </div>
         </div>
+        
       </div>
     </div>
   )
