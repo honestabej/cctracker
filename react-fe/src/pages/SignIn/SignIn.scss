@@ -13,7 +13,7 @@
   overflow: show;
 }
 
-.test {
+.bg {
   width: 100%;
   height: $headerHeight;
   background-color: $siteBlack;
@@ -98,7 +98,7 @@
 }
 
 // Spacing for signin items
-.signin-wrapper form .signin-input-container{
+.signin-wrapper form .signin-input-container {
   height: $inputHeight;
   margin-bottom: 30px;
   position: relative;
@@ -107,7 +107,7 @@
 }
 
 // Styling for email and pwd
-.signin-wrapper form .signin-input-container .signin-input{
+.signin-wrapper form .signin-input-container .signin-input {
   height: 100%;
   width: calc(100% - 45px);
   margin-left: $inputHeight;
@@ -116,7 +116,7 @@
   background-color: $siteDark;
   color: $siteWhite;
   border: none;
-  outline:none;
+  outline: none;
   font-size: 16px;
   transition: all 0.3s ease;
 }
@@ -127,6 +127,7 @@
   transform: translateY(8px);
 }
 
+// Properties of placeholder after the input area is clicked on
 .signin-input:focus ~ .placeholder,
 .signin-input:not(:placeholder-shown) ~ .placeholder {
   transform: translateY(-25px) translateX(0px) scale(0.75);
@@ -144,7 +145,7 @@
 .signin-wrapper form i{
   position: absolute;
   height: $inputHeight;
-  width: $itemWidth;
+  width: $inputHeight;
   color: #fff;
   font-size: 18px;
   display: flex;

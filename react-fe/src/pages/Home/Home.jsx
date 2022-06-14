@@ -1,36 +1,29 @@
 import React, { useState } from 'react';
 import './Home.scss';
-import Test from './../../images/HomeImg.png';
+import HomeImg from './../../images/HomeImg.png';
 
 function Home() {
   return (
     <div className="home-container">
-      <div className="main-container">
-        <div className="home-row">
-          <div className="text-view">
-            <div className="main">
-              This will be the main title text area
-            </div>
-            
-            <div className="sub">
-              This will be the sub text area
-            </div>
-            <div className="signup">
-              <form action="#">
-                <div className="home-input-container">
-                  <input class="home-input" type="text" placeholder=" " required />
-                  <div class="home-cut home-email"></div>
-                  <label class="placeholder">E-Mail</label>
-                  <input class="home-signin-btn" type="submit" value="Login" />
-                </div>
-              </form>
-            </div>
+      <div className="home-row">
+        <div className="text-col">
+          <div className="main-text">
+            Build a budget while building your credit
           </div>
-          <div className="pic-view">
-            <img class="pic" src={Test} />
+          <div className="sub-text">
+            Managing a budget with multiple cards and accounts can be tough. 
+            Let us do the managing so you can feel responsible doing the spending.
+          </div>
+          <div className="signup-wrapper">
+            <input class="signup-input" type="text" placeholder=" " required />
+            <div class="signup-cut"></div>
+            <label class="placeholder">E-Mail</label>
+            <input class="signup-btn" type="submit" value="Signup" />
           </div>
         </div>
-        
+        <div className="pic-col">
+          <img class="pic" src={HomeImg} />
+        </div>
       </div>
     </div>
   )

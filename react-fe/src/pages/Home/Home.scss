@@ -1,193 +1,293 @@
 @import './../../globalStyles/variables.scss';
 
-body {
-  background: linear-gradient(45deg, rgba(#AE67FA, 1), rgba(#F49867, 1));
-  // overflow: hidden;
-  
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    min-width: 400vw;
-    min-height: 400vw;
-    background: radial-gradient(ellipse at bottom, #040C18 65%, #042c54 100%);
-    animation-name: rotate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  
-  &:before {
-    bottom: 10vh;
-    border-radius: 45%;
-    animation-duration: 10s;
-  }
-  
-  &:after {
-    bottom: 5vh;
-    opacity: .5;
-    border-radius: 47%;
-    animation-duration: 10s;
-  }
-}
 
 .home-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  
-  // @media screen (min-width: ){
-  //   min-height: 100vh;
-  // }
-  
-}
-
-@keyframes rotate {
-  0% {transform: translate(-50%, 0) rotateZ(0deg);}
-  50% {transform: translate(-50%, -1%) rotateZ(135deg);}
-  100% {transform: translate(-50%, 0%) rotateZ(270deg);}
-}
-
-.home-container .main-container {
-  z-index: 2;
-  height: calc(70vh - 60px);
-}
-
-.main-container hr {
-  margin-top: 30px;
-  height: 20px;
-  border-width: 0;
+  position:absolute;
   background-color: $siteWhite;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
 }
 
-.main-container .home-row {
-  margin-top: 0%;
-  margin-left: 40px;
-  margin-right: 40px;
-  max-width: $siteWidth;
-  height: 100%;
+.home-container .home-row {
+  width: 100%;
+  max-width: $maxWidth;
+  height: calc(100vh - 70px); // 70px is $headerHeight, but var doesnt work in calc()
+  margin-top: $headerHeight;
+  margin: $headerHeight auto auto auto;
+  padding: 0px 20px;
 
-  @media screen and (min-width: 951px) {
-    display: flex;
+  @media screen and (min-width: $minSize) {
+    
+  }
+
+  @media screen and (min-width: $medSize) {
+    display: table;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $regSize) {
+    display: table;
+  }
+
+  @media screen and (min-width: $lrgSize) {
+    display: table;
   }
 }
 
-.home-row .text-view {
-  background-color: orange;
-  color: $siteWhite;
+.home-row .text-col {
+  width: 100%;
+  position: relative;
+  // text-align: left;
+  
+
+  @media screen and (min-width: $minSize) {
+    
+  }
+
+  @media screen and (min-width: $medSize) {
+    display: table-cell;
+    width: 40%;
+  }
+
+  // @media screen and (min-width: $regSize) {
+  //   display: table-cell;
+  //   width: 40%;
+  // }
+
+  // @media screen and (min-width: $lrgSize) {
+  //   display: table-cell;
+  //   width: 40%;
+  // }
+}
+
+.text-col .main-text {
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold; 
+  line-height: 40px;
   text-align: center;
-  position: relative;
-  left: 0;
-  right: 0;
-  padding:0 1.5em;
-  width: 60%;
+  margin-top: 15px;
 
-  @media screen and (max-width: 950px) {
-    width: 100%;
+  @media screen and (min-width: $minSize) {
+    
+  }
+
+  @media screen and (min-width: $medSize) {
+    display: table-cell;
+    width: 60%;
+  }
+
+  // @media screen and (min-width: $regSize) {
+  //   display: table-cell;
+  //   width: 60%;
+  // }
+
+  // @media screen and (min-width: $lrgSize) {
+  //   display: table-cell;
+  //   width: 60%;
+  // }
+}
+
+.text-col .sub-text {
+  width: 100%;
+  font-size: 20px; 
+  line-height: 25px;
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+
+  @media screen and (min-width: $minSize) {
+    
+  }
+
+  @media screen and (min-width: $medSize) {
+    
+  }
+
+  @media screen and (min-width: $regSize) {
+    
+  }
+
+  @media screen and (min-width: $lrgSize) {
+    
   }
 }
 
-.text-view .main {
-  font-family: 'Poppins', sans-serif;
-  font-size: 66px;
-  font-weight: bolder;
-  line-height: 66px;
-  color: white;
+.text-col .signup-wrapper {
+  width: 80%;
+  margin: 12px auto 0px auto;
+  height: 95px; // Room for 2 $inputHeight and 5px spacing
+
+  @media screen and (min-width: $minSize) {
+    
+  }
+
+  @media screen and (min-width: $medSize) {
+    
+  }
+
+  @media screen and (min-width: $regSize) {
+    
+  }
+
+  @media screen and (min-width: $lrgSize) {
+    
+  }
 }
 
-.text-view .sub {
-  font-size: 24px;
-  color: white;
+.signup-wrapper .signup-cut{
+  background-color: $siteWhite;
+  border-radius: 10px;
+  height: 20px;
+  margin-left: 15px;
+  transform: translateY(-65px);
+  transition: transform 200ms;
+  width: 50px;
 }
 
-.text-view .signup {
-
+.signup-wrapper .placeholder {
+  color: $siteWhite;
+  pointer-events: none;
+  margin-left: 15px;
+  font-size: 1rem;
+  transform: translateY(-55px);
+  transition: transform 200ms, color 200ms;
 }
 
-.signup form .home-input-container{
-  display: flex;
+.signup-wrapper .signup-input {
+  width: 100%;
   height: $inputHeight;
-  max-width: 500px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  text-align: left;
+  padding-left: 15px;
   border-radius: $borderRadius;
   background-color: $siteDark;
-}
-
-.home-input-container .home-input {
-  height: 100%;
-  width: calc(100% - 125px);
-  padding-left: 10px;
-  border-radius: $borderRadius;
-  background-color: $siteBlack;
+  color: $siteWhite;
   border: none;
   outline: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  
+  @media screen and (min-width: $minSize) {
+    
+  }
+
+  @media screen and (min-width: $medSize) {
+    
+  }
+
+  @media screen and (min-width: $regSize) {
+    
+  }
+
+  @media screen and (min-width: $lrgSize) {
+    
+  }
 }
 
-.home-input-container .home-cut {
+// Prpoerties of the .signin-cut area after the input area is clicked on
+.signup-input:focus ~ .signup-cut,
+.signup-input:not(:placeholder-shown) ~ .signup-cut {
+  transform: translateY(-57px);
 }
 
-.home-input-container .home-email {
+// Properties of placeholder after the input area is clicked on
+.signup-input:focus ~ .placeholder,
+.signup-input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-78px) translateX(2px) scale(0.85);
 }
 
-.home-input-container .home-signin-btn {
-  width: 125px;
-  margin-left: 5px;
+.signup-input:not(:placeholder-shown) ~ .placeholder {
+  color: $siteWhite;
+}
+
+.signup-input:focus ~ .placeholder {
+  color: $siteDark;
+}
+
+.signup-wrapper .signup-btn {
+  width: 100%;
+  height: $inputHeight;
+  border-radius: $buttonRadius;
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   padding-left: 0px;
-  background: $siteGradient;
+  background: linear-gradient(45deg, rgba($siteOrange, 0.9), rgba($siteDarkPurple, 1));
   border: 1px solid transparent;
   transition: 0.5s ease all;
   cursor: pointer;
-  border-radius: $borderRadius;
-}
+  transform: translateY(-47px);
+  
+  @media screen and (min-width: $minSize) {
+    
+  }
 
-.home-input-container .home-signin-btn:hover {
-  border-color: $sitePurple;
-  background: rgba($siteBlue, 0.3);
-  color: $siteWhite;
-}
+  @media screen and (min-width: $medSize) {
+    
+  }
 
-.home-input-container .placeholder {
-  color: $siteWhite;
-  font-family: sans-serif;
-  line-height: 15px;
-  top: 16px;
-  left: 10px;
-  pointer-events: none;
-  position: absolute;
-  transform-origin: 0 50%;
-  transition: transform 200ms, color 200ms;
-}
+  @media screen and (min-width: $regSize) {
+    
+  }
 
-.home-row .pic-view {
-  background-color: green;
-  position: relative;
-  width: 40%;
+  @media screen and (min-width: $lrgSize) {
+    
+  }
 
-  @media screen and (max-width: 950px) {
-    width: 100%;
+  &:hover {
+    transition: 0.3s ease all;
+    border-color: $siteDarkPurple;
+    background: rgba($siteDarkPurple, 0.5);
+  }
+
+  &:active {
+    transition: 0.3s ease all;
+    border-color: $siteDarkPurple;
+    background: rgba($siteDarkPurple, 0.5);
   }
 }
 
-.pic-view .pic {
+.home-row .pic-col {
+  width: 100%;
+  height: 200px;
+  margin-top: 15px;
+  
+
+  @media screen and (min-width: $minSize) {
+    
+  }
+
+  @media screen and (min-width: $medSize) {
+    
+  }
+
+  @media screen and (min-width: $regSize) {
+    
+  }
+
+  @media screen and (min-width: $lrgSize) {
+    
+  }
+}
+
+.pic-col .pic {
+  width: 360px;
+  height: 180px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  height: 74%;
-  max-width: 400px;
-  max-height: 296px;
-  margin-bottom: 50px;
+
+  @media screen and (min-width: $minSize) {
+    
+  }
+
+  @media screen and (min-width: $medSize) {
+    
+  }
+
+  @media screen and (min-width: $regSize) {
+    
+  }
+
+  @media screen and (min-width: $lrgSize) {
+    
+  }
 }

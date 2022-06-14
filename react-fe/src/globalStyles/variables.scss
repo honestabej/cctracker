@@ -3,51 +3,35 @@
 $Poppins: 'Poppins' sans-serif;
 
 // Site colors
-$siteWhite: #FFFFFF;
+$siteWhite: #F5F4F0;
 $siteBlack: #171C24;
 $siteDark: #232D35;
-$sitePurple: #AE67FA;
-$siteOrange: #F49867;
+$siteOrange: #EfA429;
+$siteYellow: #F4D428;
+$siteDarkPurple: #61344A;
+$sitePurple: #A899FA;
+$siteSecondPurple: #AE67FA;
+$siteLightPurple: #B8BFE9;
 $siteBlue: #5D9BFC;
+$siteSecondBlue: #3591AE;
+$siteDarkBlue: #5572A0;
+$siteBrown: #9FA2A7;
+$siteHomeBlue: #040E1E;
 $siteGradient: linear-gradient(45deg, rgba($sitePurple, 1), rgba($siteOrange, 1));
 
-// Old colors
-$siteDarkBlue: #5572A0;
-$siteSecondBlue: #3591AE;
-$siteBrown: #9FA2A7;
-$sitePurple: #A899FA;
-$siteLightPurple: #B8BFE9;
-$siteHomeBlue: #040E1E;
-
+// Screen size cutoffs
+// Default is Small sized mobile devices
+$minSize: 576px; // Regular sized mobile device
+$medSize: 768px; // Tablets
+$regSize: 992px; // Laptops
+$lrgSize: 1200px; // Desktops
 
 // Site spacing
-$spacing-md: 16px;
-$spacing-lg: 32px;
-$siteWidth: 1350px;
+$headerHeight: 70px;
+$maxWidth: 1350px;
 $inputHeight: 45px;
 $itemWidth: $inputHeight;
 
 // Border radius
 $borderRadius: 12px;
 $buttonRadius: $borderRadius calc(#{$borderRadius} * 5);
-
-// Header height
-$headerHeight: 70px;
-
-@mixin breakpoint($point) {
-    @if $point == md {
-        // 768px
-        @media(min-width: 48em) {
-            @content;
-        }
-    }
-}
-
-@mixin home-breakpoint($point) {
-    @if $point == md {
-        // 768px
-        @media(min-width: 881px) {
-            @content;
-        }
-    }
-}

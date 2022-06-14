@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import classes from './Header.module.scss';
+import Logo from '../../images/LogoBlack.png'
 import {BiMenuAltRight} from 'react-icons/bi';
 import {AiOutlineClose} from 'react-icons/ai';
 import { Link, useHistory } from "react-router-dom";
@@ -43,21 +44,12 @@ const Header = () => {
       <header className={classes.header}>
         <div className={classes.header__content}>
           <Link to="/" className={classes.header__content__logo}>
-            <img className={classes.header__content__logo__img} src="/images/cctracker-logo.png" alt=""></img>
+            <img src={Logo} alt=""></img>
           </Link>
-          <nav
-            className={`${classes.header__content__nav} ${
-              menuOpen && size.width < 768 ? classes.isMenu : ""
-            }`}
-          >
-            <ul>
-              <li>
-                <a>About</a>
-              </li>
-              <li>
-                <a href="/signin">Sign In</a>
-              </li>
-            </ul>
+          <nav className={`${classes.header__content__nav} ${menuOpen && size.width < 651 ? classes.isMenu : ""}`}>
+            <div className={classes.header__content__nav__link}>
+              <a href="/signin">Sign In</a>
+            </div>
             <button onClick={ctaClickHandler}>Sign Up</button>
           </nav>
           <div className={classes.header__content__toggle}>

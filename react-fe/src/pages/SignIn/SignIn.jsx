@@ -28,7 +28,6 @@ export default function Login({ setToken }) {
 
   return(
     <div className="header-bg">
-      <div className="test"></div>
       <div className="signin-container">
         <div className="box-container">
           <div className="signin-wrapper">
