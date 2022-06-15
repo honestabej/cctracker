@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './Home.scss';
 import HomeImg from './../../images/HomeImg.png';
+import Header from './../../components/Header/Header';
 
 function Home() {
   return (
     <div className="home-container">
+      <Header />
       <div className="home-row">
         <div className="text-col">
           <div className="main-text">

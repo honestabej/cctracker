@@ -13,52 +13,25 @@
   width: 100%;
   max-width: $maxWidth;
   height: calc(100vh - 70px); // 70px is $headerHeight, but var doesnt work in calc()
-  margin-top: $headerHeight;
-  margin: $headerHeight auto auto auto;
-  padding: 0px 20px;
-
-  @media screen and (min-width: $minSize) {
-    
-  }
+  margin: 80px auto auto auto;
 
   @media screen and (min-width: $medSize) {
-    display: table;
+    margin: 100px auto auto auto;
+    display: flex;
+    justify-content: center;
     align-items: center;
-  }
+    transform: translateY(-70px);
 
-  @media screen and (min-width: $regSize) {
-    display: table;
-  }
-
-  @media screen and (min-width: $lrgSize) {
-    display: table;
   }
 }
 
 .home-row .text-col {
   width: 100%;
   position: relative;
-  // text-align: left;
-  
-
-  @media screen and (min-width: $minSize) {
-    
-  }
 
   @media screen and (min-width: $medSize) {
-    display: table-cell;
-    width: 40%;
+    width: 45%;
   }
-
-  // @media screen and (min-width: $regSize) {
-  //   display: table-cell;
-  //   width: 40%;
-  // }
-
-  // @media screen and (min-width: $lrgSize) {
-  //   display: table-cell;
-  //   width: 40%;
-  // }
 }
 
 .text-col .main-text {
@@ -68,25 +41,19 @@
   line-height: 40px;
   text-align: center;
   margin-top: 15px;
-
-  @media screen and (min-width: $minSize) {
-    
-  }
+  padding: 0px 20px;
 
   @media screen and (min-width: $medSize) {
-    display: table-cell;
-    width: 60%;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: left; 
   }
 
-  // @media screen and (min-width: $regSize) {
-  //   display: table-cell;
-  //   width: 60%;
-  // }
+  @media screen and (min-width: $regSize) { 
+    font-size: 60px;
+    line-height: 60px;
+  }
 
-  // @media screen and (min-width: $lrgSize) {
-  //   display: table-cell;
-  //   width: 60%;
-  // }
 }
 
 .text-col .sub-text {
@@ -95,36 +62,24 @@
   line-height: 25px;
   text-align: center;
   margin-top: 10px;
-  padding-bottom: 10px;
-
-  @media screen and (min-width: $minSize) {
-    
-  }
+  padding: 0px 20px 10px 20px;
 
   @media screen and (min-width: $medSize) {
-    
-  }
-
-  @media screen and (min-width: $regSize) {
-    
-  }
-
-  @media screen and (min-width: $lrgSize) {
-    
+   text-align: left; 
   }
 }
 
 .text-col .signup-wrapper {
-  width: 80%;
+  width: 90%;
   margin: 12px auto 0px auto;
   height: 95px; // Room for 2 $inputHeight and 5px spacing
+  padding: 0px 20px;
 
-  @media screen and (min-width: $minSize) {
-    
-  }
 
   @media screen and (min-width: $medSize) {
-    
+    width: 100%;
+    height: 45px;
+    margin: 12px 0 0 0;
   }
 
   @media screen and (min-width: $regSize) {
@@ -164,17 +119,13 @@
   color: $siteWhite;
   border: none;
   outline: none;
-  
-  @media screen and (min-width: $minSize) {
-    
-  }
 
   @media screen and (min-width: $medSize) {
     
   }
 
   @media screen and (min-width: $regSize) {
-    
+    width: 73%;
   }
 
   @media screen and (min-width: $lrgSize) {
@@ -195,7 +146,7 @@
 }
 
 .signup-input:not(:placeholder-shown) ~ .placeholder {
-  color: $siteWhite;
+  color: $siteDark;
 }
 
 .signup-input:focus ~ .placeholder {
@@ -205,31 +156,21 @@
 .signup-wrapper .signup-btn {
   width: 100%;
   height: $inputHeight;
-  border-radius: $buttonRadius;
+  border-radius: $borderRadius;
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   padding-left: 0px;
-  background: linear-gradient(45deg, rgba($siteOrange, 0.9), rgba($siteDarkPurple, 1));
+  background: $buttonGradient;
   border: 1px solid transparent;
   transition: 0.5s ease all;
   cursor: pointer;
   transform: translateY(-47px);
-  
-  @media screen and (min-width: $minSize) {
-    
-  }
-
-  @media screen and (min-width: $medSize) {
-    
-  }
 
   @media screen and (min-width: $regSize) {
-    
-  }
-
-  @media screen and (min-width: $lrgSize) {
-    
+    width: 25%;
+    float: right;
+    transform: translateY(-65px);
   }
 
   &:hover {
@@ -247,16 +188,12 @@
 
 .home-row .pic-col {
   width: 100%;
-  height: 200px;
-  margin-top: 15px;
-  
-
-  @media screen and (min-width: $minSize) {
-    
-  }
+  margin-top: 20px;
 
   @media screen and (min-width: $medSize) {
-    
+    margin-top: 0;
+    width: 55%;
+    height: 400px;
   }
 
   @media screen and (min-width: $regSize) {
@@ -269,18 +206,14 @@
 }
 
 .pic-col .pic {
-  width: 360px;
-  height: 180px;
+  width: 90%;
+  aspect-ratio: 783 / 565;
   display: block;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: $minSize) {
-    
-  }
-
   @media screen and (min-width: $medSize) {
-    
+    width: 100%;
   }
 
   @media screen and (min-width: $regSize) {

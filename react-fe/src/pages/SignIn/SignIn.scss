@@ -1,36 +1,26 @@
 @import './../../globalStyles/variables.scss';
 
+.header-bg {
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: $siteBlack;
+}
 
 .signin-container {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   min-height: calc(100vh - 70px);
   font-family: 'Poppins', sans-serif;
   background: $siteDark;
   overflow: show;
 }
 
-.bg {
-  width: 100%;
-  height: $headerHeight;
-  background-color: $siteBlack;
-  top: 0;
-  
-}
-
 .signin-container .box-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 450px;
   padding: 0 20px;
-  margin: 50px auto;
-  transform: translateY(-70px);
+  margin: auto;
 }
 
 // Floating box around sign in items
@@ -161,7 +151,7 @@
 
 // Forgot pwd decoration
 .signin-wrapper form .signin-pass a{
-  color: $siteBlue;
+  color: $sitePurple;
   font-size: 17px;
   text-decoration: none;
 }
@@ -191,7 +181,7 @@
   font-size: 20px;
   font-weight: 500;
   padding-left: 0px;
-  background: $siteGradient;
+  background: $buttonGradient;
   border: 1px solid transparent;
   transition: 0.5s ease all;
   cursor: pointer;
@@ -215,7 +205,7 @@ form .signin-button input:hover {
 
 // Signup now link decoration
 .signin-wrapper form .signup-link a {
-  color: $siteBlue;
+  color: $sitePurple;
   font-size: 17px;
   text-decoration: none;
 }
