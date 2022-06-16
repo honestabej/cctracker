@@ -1,13 +1,13 @@
 @import './../../globalStyles/variables.scss';
 
-.header-bg {
+.signup-header-bg {
   top: 0;
   width: 100%;
   height: 70px;
   background-color: $siteBlack;
 }
 
-.signin-container {
+.signup-page-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,14 +17,14 @@
   overflow: show;
 }
 
-.signin-container .box-container {
+.signup-box-container {
   width: 450px;
   padding: 0 20px;
   margin: auto;
 }
 
 // Floating box around sign in items
-.box-container .signin-wrapper {
+.signup-box-wrapper {
   width: 100%;
   border-radius: 5px;
   background: 
@@ -36,7 +36,7 @@
 }
 
 // Area containing title text
-.signin-wrapper .signin-title{
+.signup-title {
   height: 90px;
   border-radius: 5px 5px 0 0;
   color: #fff;
@@ -47,13 +47,13 @@
   justify-content: center;
 }
 
-// Keep signin items inside floating box
-.signin-wrapper form{
+// Keep signup items inside floating box
+.signup-box-wrapper form {
   padding: 10px 15px 25px 15px;
 }
 
 // Placeholder input text
-.signin-input-container .placeholder {
+.signup-placeholder {
   color: $siteWhite;
   font-family: sans-serif;
   line-height: 15px;
@@ -66,7 +66,7 @@
 }
 
 // Area for placeholder to fade into
-.signin-cut{
+.signup-cut {
   background-color: $siteBlack;
   border-radius: 10px;
   height: 20px;
@@ -77,18 +77,23 @@
   transition: transform 200ms;
 }
 
-// Area for email signin-cut
-.signin-email{
+// Area for email signup-cut
+.signup-cut-email {
   width: 55px;
 }
 
-// Area for password signin-cut
-.signin-password{
+// Area for password signup-cut
+.signup-cut-password {
   width: 73px;
 }
 
-// Spacing for signin items
-.signin-wrapper form .signin-input-container {
+// Area for re-enter password signup-cut
+.signup-cut-reenter-password {
+    width: 123px;
+  }
+
+// Spacing for signup items
+.signup-input-container {
   height: $inputHeight;
   margin-bottom: 30px;
   position: relative;
@@ -97,7 +102,7 @@
 }
 
 // Styling for email and pwd
-.signin-wrapper form .signin-input-container .signin-input {
+.signup-input {
   height: 100%;
   width: calc(100% - 45px);
   margin-left: $inputHeight;
@@ -111,28 +116,28 @@
   transition: all 0.3s ease;
 }
 
-// Prpoerties of the .signin-cut area after the input area is clicked on
-.signin-input:focus ~ .signin-cut,
-.signin-input:not(:placeholder-shown) ~ .signin-cut {
+// Prpoerties of the .signup-cut area after the input area is clicked on
+.signup-input:focus ~ .signup-cut,
+.signup-input:not(:placeholder-shown) ~ .signup-cut {
   transform: translateY(8px);
 }
 
 // Properties of placeholder after the input area is clicked on
-.signin-input:focus ~ .placeholder,
-.signin-input:not(:placeholder-shown) ~ .placeholder {
+.signup-input:focus ~ .signup-placeholder,
+.signup-input:not(:placeholder-shown) ~ .signup-placeholder {
   transform: translateY(-25px) translateX(0px) scale(0.75);
 }
 
-.signin-input:not(:placeholder-shown) ~ .placeholder {
+.signup-input:not(:placeholder-shown) ~ .signup-placeholder {
   color: $siteWhite;
 }
 
-.signin-input:focus ~ .placeholder {
+.signup-input:focus ~ .signup-placeholder {
   color: $sitePurple;
 }
 
 // Icons preceeding input field
-.signin-wrapper form i{
+.signup-box-wrapper form i{
   position: absolute;
   height: $inputHeight;
   width: $inputHeight;
@@ -143,40 +148,22 @@
   justify-content: center;
 }
 
-// Spacing for forgot pwd
-.signin-wrapper form .signin-pass{
-  text-align: center;
-  margin: -10px 0 20px 5px;
-}
-
-// Forgot pwd decoration
-.signin-wrapper form .signin-pass a{
-  color: $sitePurple;
-  font-size: 17px;
-  text-decoration: none;
-}
-
-// Forgot pwd hover decoration
-.signin-wrapper form .signin-pass a:hover{
-  text-decoration: underline;
-}
-
-// Alignment of signin button
-.signin-wrapper form .signin-button-container{
+// Alignment of signup button
+.signup-btn-container{
   text-align: center;
 }
 
-// Styling for signin button
-.signin-wrapper form .signin-button-container input{
+// Styling for signup button
+.signup-btn-container input{
   height: $inputHeight;
   width: 85%;
-  border-radius: $buttonRadius;
+  border-radius: $borderRadius;
   border: 1px solid lightgrey;
   font-size: 16px;
 }
 
-// signin button decoration
-.signin-wrapper form .signin-button input{
+// signup button decoration
+.signup-btn input{
   font-size: 20px;
   font-weight: 500;
   padding-left: 0px;
@@ -190,14 +177,14 @@
   transition: 0.3s ease all;
 }
 
-// signin button hover decoration
-form .signin-button input:hover {
+// signup button hover decoration
+form .signup-btn input:hover {
   background: $siteOrange;
   color: $siteWhite;
 }
 
 // Not a member spacing
-.signin-wrapper form .signup-link {
+.signin-link {
   text-align: center;
   color: $siteWhite;
   margin-top: 20px;
@@ -206,18 +193,18 @@ form .signin-button input:hover {
 }
 
 // Signup now link decoration
-.signin-wrapper form .signup-link a {
+.signin-link a {
   color: $sitePurple;
   font-size: 17px;
   text-decoration: none;
 }
 
 // Signup now link hover decoration
-form .signup-link a:hover {
+.signin-link a:hover {
   text-decoration: underline;
 }
 
-.signin-wrapper form hr {
+.signup-box-wrapper form hr {
   margin-top: 30px;
   height: 2px;
   border-width: 0;

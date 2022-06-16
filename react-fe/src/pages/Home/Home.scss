@@ -1,7 +1,7 @@
 @import './../../globalStyles/variables.scss';
 
 
-.home-container {
+.home-page-container {
   position:absolute;
   background: linear-gradient(45deg, rgba($siteWhite, 0.9), rgba($siteSecondWhite, 1));
   overflow: hidden;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.home-container .home-row {
+.home-row {
   width: 100%;
   max-width: $maxWidth;
   height: calc(100vh - 70px); // 70px is $headerHeight, but var doesnt work in calc()
@@ -25,7 +25,7 @@
   }
 }
 
-.home-row .text-col {
+.home-text-col {
   width: 100%;
   position: relative;
 
@@ -34,7 +34,7 @@
   }
 }
 
-.text-col .main-text {
+.home-main-text {
   width: 100%;
   font-size: 40px;
   font-weight: bold; 
@@ -56,12 +56,12 @@
 
 }
 
-.text-col .sub-text {
+.home-sub-text {
   width: 100%;
   font-size: 20px; 
   line-height: 25px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 0px 20px 10px 20px;
 
   @media screen and (min-width: $medSize) {
@@ -69,124 +69,90 @@
   }
 }
 
-.text-col .signup-wrapper {
-  width: 90%;
-  margin: 12px auto 0px auto;
-  height: 95px; // Room for 2 $inputHeight and 5px spacing
-  padding: 0px 20px;
-
-
-  @media screen and (min-width: $medSize) {
-    width: 100%;
-    height: 45px;
-    margin: 12px 0 0 0;
-  }
-
-  @media screen and (min-width: $regSize) {
-    
-  }
-
-  @media screen and (min-width: $lrgSize) {
-    
-  }
-}
-
-.signup-wrapper .signup-cut{
-  background-color: $siteWhite;
-  border-radius: 10px;
-  height: 20px;
-  margin-left: 15px;
-  transform: translateY(-65px);
-  transition: transform 200ms;
-  width: 50px;
-}
-
-.signup-wrapper .placeholder {
-  color: $siteWhite;
-  pointer-events: none;
-  margin-left: 15px;
-  font-size: 1rem;
-  transform: translateY(-55px);
-  transition: transform 200ms, color 200ms;
-}
-
-.signup-wrapper .signup-input {
+.home-signup-wrapper {
+  background-color: green;
+  height: 95px; // Two $inputHeight and 5px for spacing
   width: 100%;
+  padding: 0px 20px;
+  margin-top: 10px;
+}
+
+.home-signup-input-wrapper {
+  background-color: orange;
+  position: relative;
   height: $inputHeight;
+}
+
+.home-signup-input {
+  position: absolute;
+  height: $inputHeight;
+  width: 100%;
   padding-left: 15px;
   border-radius: $borderRadius;
   background-color: $siteDark;
   color: $siteWhite;
   border: none;
   outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
 
-  @media screen and (min-width: $medSize) {
-    
-  }
+.home-signup-cut{
+  background-color: $siteWhite;
+  position: absolute;
+  height: 20px;
+  width: 55px;
+  margin-left: 15px;
+  transform: translateY(-20px);
+  border-radius: 10px;
+  transition: transform 200ms;
+}
 
-  @media screen and (min-width: $regSize) {
-    width: 73%;
-  }
+.home-placeholder {
+  position: absolute;
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $siteWhite;
+  font-family: sans-serif;
+  line-height: 15px;
+  transition: transform 200ms, color 200ms;
+  pointer-events: none;
+}
 
-  @media screen and (min-width: $lrgSize) {
-    
-  }
+.home-signup-btn-wrapper { 
+  background-color: red;
+  height: $inputHeight;
+  margin-top: 5px;
+}
+
+.home-signup-btn {
+
 }
 
 // Prpoerties of the .signin-cut area after the input area is clicked on
-.signup-input:focus ~ .signup-cut,
-.signup-input:not(:placeholder-shown) ~ .signup-cut {
-  transform: translateY(-57px);
+.home-signup-input:focus ~ .home-signup-cut,
+.home-signup-input:not(:placeholder-shown) ~ .home-signup-cut {
+  transform: translateY(-12px);
 }
 
 // Properties of placeholder after the input area is clicked on
-.signup-input:focus ~ .placeholder,
-.signup-input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-78px) translateX(2px) scale(0.85);
+.home-signup-input:focus ~ .home-placeholder,
+.home-signup-input:not(:placeholder-shown) ~ .home-placeholder {
+  transform: translateY(-32px) translateX(4px) scale(0.85);
 }
 
-.signup-input:not(:placeholder-shown) ~ .placeholder {
+.home-signup-input:not(:placeholder-shown) ~ .home-placeholder {
   color: $siteDark;
 }
 
-.signup-input:focus ~ .placeholder {
+.home-signup-input:focus ~ .home-placeholder {
   color: $siteDark;
 }
 
-.signup-wrapper .signup-btn {
-  width: 100%;
-  height: $inputHeight;
-  border-radius: $borderRadius;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  padding-left: 0px;
-  background: $buttonGradient;
-  border: 1px solid transparent;
-  transition: 0.5s ease all;
-  cursor: pointer;
-  transform: translateY(-47px);
-
-  @media screen and (min-width: $regSize) {
-    width: 25%;
-    float: right;
-    transform: translateY(-65px);
-  }
-
-  &:hover {
-    transition: 0.3s ease all;
-    border-color: $siteDarkPurple;
-    background: rgba($siteDarkPurple, 0.5);
-  }
-
-  &:active {
-    transition: 0.3s ease all;
-    border-color: $siteDarkPurple;
-    background: rgba($siteDarkPurple, 0.5);
-  }
-}
-
-.home-row .pic-col {
+.home-pic-col {
   width: 100%;
   margin-top: 20px;
 
@@ -195,17 +161,9 @@
     width: 55%;
     height: 400px;
   }
-
-  @media screen and (min-width: $regSize) {
-    
-  }
-
-  @media screen and (min-width: $lrgSize) {
-    
-  }
 }
 
-.pic-col .pic {
+.home-pic {
   width: 90%;
   aspect-ratio: 783 / 565;
   display: block;
@@ -214,13 +172,5 @@
 
   @media screen and (min-width: $medSize) {
     width: 100%;
-  }
-
-  @media screen and (min-width: $regSize) {
-    
-  }
-
-  @media screen and (min-width: $lrgSize) {
-    
   }
 }

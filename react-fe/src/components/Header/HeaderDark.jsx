@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import classes from './HeaderDark.module.scss';
-import Logo from '../../images/LogoColor.png'
+import Logo from '../../images/LogoWhite.png'
 import {BiMenuAltRight} from 'react-icons/bi';
 import {AiOutlineClose} from 'react-icons/ai';
 import { Link, useHistory } from "react-router-dom";
