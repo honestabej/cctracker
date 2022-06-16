@@ -52,100 +52,13 @@
   padding: 10px 15px 25px 15px;
 }
 
-// Placeholder input text
-.signup-placeholder {
-  color: $siteWhite;
-  font-family: sans-serif;
-  line-height: 15px;
-  top: 16px;
-  left: 55px;
-  pointer-events: none;
-  position: absolute;
-  transform-origin: 0 50%;
-  transition: transform 200ms, color 200ms;
-}
-
-// Area for placeholder to fade into
-.signup-cut {
-  background-color: $siteBlack;
-  border-radius: 10px;
-  height: 20px;
-  left: 45px;
-  position: absolute;
-  top: -20px;
-  transform: translateY(0);
-  transition: transform 200ms;
-}
-
-// Area for email signup-cut
-.signup-cut-email {
-  width: 55px;
-}
-
-// Area for password signup-cut
-.signup-cut-password {
-  width: 73px;
-}
-
-// Area for re-enter password signup-cut
-.signup-cut-reenter-password {
-    width: 123px;
-  }
-
 // Spacing for signup items
 .signup-input-container {
+  position: relative;
   height: $inputHeight;
   margin-bottom: 30px;
-  position: relative;
   border-radius: $borderRadius;
   background-color: $siteDark;
-}
-
-// Styling for email and pwd
-.signup-input {
-  height: 100%;
-  width: calc(100% - 45px);
-  margin-left: $inputHeight;
-  padding-left: 10px;
-  border-radius: $borderRadius;
-  background-color: $siteDark;
-  color: $siteWhite;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-// Prpoerties of the .signup-cut area after the input area is clicked on
-.signup-input:focus ~ .signup-cut,
-.signup-input:not(:placeholder-shown) ~ .signup-cut {
-  transform: translateY(8px);
-}
-
-// Properties of placeholder after the input area is clicked on
-.signup-input:focus ~ .signup-placeholder,
-.signup-input:not(:placeholder-shown) ~ .signup-placeholder {
-  transform: translateY(-25px) translateX(0px) scale(0.75);
-}
-
-.signup-input:not(:placeholder-shown) ~ .signup-placeholder {
-  color: $siteWhite;
-}
-
-.signup-input:focus ~ .signup-placeholder {
-  color: $sitePurple;
-}
-
-// Icons preceeding input field
-.signup-box-wrapper form i{
-  position: absolute;
-  height: $inputHeight;
-  width: $inputHeight;
-  color: #fff;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 // Alignment of signup button
@@ -175,12 +88,11 @@
   color: $siteOrange;
   border: 1px solid $siteOrange;
   transition: 0.3s ease all;
-}
 
-// signup button hover decoration
-form .signup-btn input:hover {
-  background: $siteOrange;
-  color: $siteWhite;
+  &:hover {
+    background: $siteOrange;
+    color: $siteWhite;
+  }
 }
 
 // Not a member spacing
@@ -197,14 +109,13 @@ form .signup-btn input:hover {
   color: $sitePurple;
   font-size: 17px;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-// Signup now link hover decoration
-.signin-link a:hover {
-  text-decoration: underline;
-}
-
-.signup-box-wrapper form hr {
+.signup-box-wrapper hr {
   margin-top: 30px;
   height: 2px;
   border-width: 0;

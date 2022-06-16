@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SignUp.scss';
 import PropTypes from 'prop-types';
 import HeaderDark from '../../components/Header/HeaderDark';
+import InputBox from './../../components/InputBox/InputBox';
 
 async function signupUser(credentials) {
   return fetch('http://localhost:3001/login', {
@@ -28,7 +29,7 @@ export default function Login({ setToken }) {
   }
 
   return(
-    <div>
+    <>
       <HeaderDark />
       <div className="signup-header-bg"></div>
       <div className="signup-page-container">
@@ -39,22 +40,10 @@ export default function Login({ setToken }) {
             </div>
             <form action="#">
               <div className="signup-input-container">
-                <i className="fas fa-user" />
-                <input class="signup-input" type="text" placeholder=" " required />
-                <div class="signup-cut signup-cut-email"></div>
-                <label class="signup-placeholder">E-Mail</label>
               </div>
               <div class="signup-input-container">
-                <i class="fas fa-lock" />
-                <input class="signup-input" type="password" placeholder=" " required />
-                <div class="signup-cut signup-cut-password"></div>
-                <label class="signup-placeholder">Password</label>
               </div>
               <div class="signup-input-container">
-                <i class="fas fa-lock" />
-                <input class="signup-input" type="password" placeholder=" " required />
-                <div class="signup-cut signup-cut-reenter-password"></div>
-                <label class="signup-placeholder">Re-Enter Password</label>
               </div>
               <div class="signup-btn-container signup-btn">
                 <input type="submit" value="Sign Up" />
@@ -67,7 +56,7 @@ export default function Login({ setToken }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
