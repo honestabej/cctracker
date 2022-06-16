@@ -1,0 +1,125 @@
+@import './../../globalStyles/variables.scss';
+
+.input-container {
+  position: relative;
+  width: 100%;
+  height: $inputHeight;
+  margin-top: 20px;
+  background-color: $siteDark;
+  border-radius: $borderRadius;
+}
+
+.icon-wrapper {
+  position: absolute;
+  height: $inputHeight;
+  width: $inputHeight;
+}
+
+.icon-wrapper i {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $inputHeight;
+  width: $inputHeight;
+  color: $siteWhite;
+  font-size: 20px;
+}
+
+.input-wrapper {
+  height: $inputHeight;
+  width: calc(100% - 45px);
+  float: right;
+}
+
+.input {
+  position: absolute;
+  float: right;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  height: $inputHeight;
+  width: calc(100% - 45px);
+  background-color: $siteDark;
+  border-radius: $borderRadius;
+  color: $siteWhite;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.cut {
+  position: absolute;
+  height: 20px;
+  margin-left: 15px;
+  transform: translateY(-20px);
+  background-color: $siteDark;
+  border-radius: $borderRadius;
+  transition: all 0.3s ease;
+}
+
+.white-bg {
+  background-color: $siteWhite;
+}
+
+.black-bg {
+  background-color: $siteBlack;
+}
+
+.email {
+  width: 55px;
+}
+
+.password {
+  width: 73px;
+}
+
+.reenter-password {
+  width: 123px;
+}
+
+.placeholder {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  height: $inputHeight;
+  margin: 0px 0px 0px 15px;
+  transition: all 0.3s ease;
+}
+
+.white-ph {
+  color: $siteWhite;
+}
+
+.black-ph {
+  color: $siteWhite;
+}
+
+// Prpoerties of the .cut area after the input area is clicked on
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(-12px);
+}
+
+// Properties of placeholder after the input area is clicked on
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-25px) translateX(4px) scale(0.85);
+}
+
+.input:not(:placeholder-shown) ~ .white-ph {
+  color: $siteDark;
+}
+
+.input:focus ~ .white-ph {
+  color: $siteOrange;
+}
+
+.input:not(:placeholder-shown) ~ .black-ph {
+  color: $siteWhite;
+}
+
+.input:focus ~ .black-ph {
+  color: $sitePurple;
+}
