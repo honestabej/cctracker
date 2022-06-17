@@ -6,7 +6,7 @@ import Header from './../../components/Header/Header';
 function Home() {
   return (
     <div className="home-page-container">
-      <Header />
+      <Header fontColor="header-nav black-font"/>
       <div className="home-row">
         <div className="home-text-col">
           <div className="home-main-text">
@@ -18,9 +18,7 @@ function Home() {
           </div>
           <div className="home-signup-wrapper">
             <div className="home-signup-input-wrapper">
-              <input class="home-signup-input" type="text" placeholder=" " required />
-              <div class="home-signup-cut"></div>
-              <label class="home-placeholder">E-Mail</label>
+              
             </div>
             <div className="home-signup-btn-wrapper">
               <input class="home-signup-btn" type="submit" value="Signup" />

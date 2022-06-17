@@ -6,7 +6,7 @@ export default function Dashboard() {
     <>
       <h2>Dashboard</h2>
       <div style={{width: '400px'}}>
-        <InputBox icon="fas fa-user" placeholder="E-Mail" placeholderColor="placeholder white-ph" cutType="cut white-bg email" />
+        <InputBox icon="fa-solid fa-bars" placeholder="E-Mail" placeholderColor="placeholder white-ph" cutType="cut white-bg email" />
       </div>
       
     </>

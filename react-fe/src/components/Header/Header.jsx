@@ -1,67 +1,68 @@
 import React, {useEffect, useState} from 'react';
-import classes from './Header.module.scss';
+import classes from './Header.scss';
 import Logo from '../../images/LogoBlack.png'
 import {BiMenuAltRight} from 'react-icons/bi';
 import {AiOutlineClose} from 'react-icons/ai';
 import { Link, useHistory } from "react-router-dom";
 
-const Header = () => {
-    const history = useHistory();
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [size, setSize] = useState({
-      width: undefined,
-      height: undefined,
-    });
+const Header = (prop) => {
+  const menuIcon = <i class="fa-solid fa-bars" onClick={() => setOpen(!isOpen)} />;
+  const closeIcon = <i class="fa-solid fa-xmark" onClick={() => setOpen(!isOpen)} />
 
-    useEffect(() => {
-      const handleResize = () => {
-        setSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-      };
-      window.addEventListener("resize", handleResize);
+  const whiteFont = "header-nav white-font";
+  const blackFont = "header-nav black-font";
+  const showNav = "header-menu-nav show";
+  const hideNav = "header-menu-nav hide";
+  const whiteIcon = "header-menu-toggle white-icon";
+  const blackIcon = "header-menu-toggle black-icon";
 
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+  // Variables for determining if header-menu-nav should be shown
+  const [isOpen, setOpen] = useState(false);
+  const [size, setSize] = useState({width: undefined});
 
-    useEffect(() => {
-      if (size.width > 768 && menuOpen) {
-        setMenuOpen(false);
-      }
-    }, [size.width, menuOpen]);
-
-    const menuToggleHandler = () => {
-      setMenuOpen((p) => !p);
+  // Get width of window on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+      });
     };
+    window.addEventListener("resize", handleResize);
 
-    const ctaClickHandler = () => {
-      menuToggleHandler();
-      history.push("/signup");
-    };
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return (
-      <header className={classes.header}>
-        <div className={classes.header__content}>
-          <Link to="/" className={classes.header__content__logo}>
-            <img src={Logo} alt=""></img>
-          </Link>
-          <nav className={`${classes.header__content__nav} ${menuOpen && size.width < 651 ? classes.isMenu : ""}`}>
-            <div className={classes.header__content__nav__link}>
-              <a href="/signin">Sign In</a>
-            </div>
-            <button onClick={ctaClickHandler}>Sign Up</button>
-          </nav>
-          <div className={classes.header__content__toggle}>
-              {!menuOpen ? (
-                <BiMenuAltRight onClick={menuToggleHandler} />
-              ) : (
-                <AiOutlineClose onClick={menuToggleHandler} />
-              )}
-          </div>
+  // Dont show the header-menu-nav if window is wider than 576px
+  useEffect(() => {
+    if (size.width > 576) {
+      setOpen(false);
+    }
+  }, [size.width]);
+
+  return (
+    <header className="header-container">
+      <div className="header-content">
+        <div className="header-logo">
+          <img src={Logo} alt=""></img>
         </div>
-      </header>
-    );
+        <div className={prop.fontColor}>
+          <a href="">About</a>
+          <a href="">Sign In</a>
+          <button>Sign Up</button>
+        </div>
+        <div className={isOpen ? showNav : hideNav}>
+          <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Sign In</a></li>
+            <li><a href="">Sign Up</a></li>
+          </ul>
+        </div>
+        <div className={isOpen ? whiteIcon : blackIcon}>
+          {isOpen ? closeIcon : menuIcon}
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Header;

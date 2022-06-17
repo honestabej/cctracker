@@ -33,6 +33,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+
+  hr {
+    margin-top: 30px;
+    height: 2px;
+    border-width: 0;
+    background-color: $siteDark;
+  }
 }
 
 // Area containing title text
@@ -48,8 +55,10 @@
 }
 
 // Keep signup items inside floating box
-.signup-box-wrapper form {
-  padding: 10px 15px 25px 15px;
+.signup-box-wrapper {
+  form {
+    padding: 10px 15px 25px 15px;
+  }
 }
 
 // Spacing for signup items
@@ -62,36 +71,28 @@
 }
 
 // Alignment of signup button
-.signup-btn-container{
+.signup-btn{
   text-align: center;
-}
 
-// Styling for signup button
-.signup-btn-container input{
-  height: $inputHeight;
-  width: 85%;
-  border-radius: $borderRadius;
-  border: 1px solid lightgrey;
-  font-size: 16px;
-}
-
-// signup button decoration
-.signup-btn input{
-  font-size: 20px;
-  font-weight: 500;
-  padding-left: 0px;
-  cursor: pointer;
-  outline: none;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background: $siteBlack;
-  color: $siteOrange;
-  border: 1px solid $siteOrange;
-  transition: 0.3s ease all;
-
-  &:hover {
-    background: $siteOrange;
-    color: $siteWhite;
+  input {
+    height: $inputHeight;
+    width: 85%;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: $siteBlack;
+    color: $siteOrange;
+    border: 1px solid $siteOrange;
+    transition: 0.3s ease all;
+  
+    &:hover {
+      background: $siteOrange;
+      color: $siteWhite;
+    }
   }
 }
 
@@ -102,22 +103,14 @@
   margin-top: 20px;
   margin-bottom: 100px;
   font-size: 16px;
-}
 
-// Signup now link decoration
-.signin-link a {
-  color: $sitePurple;
-  font-size: 17px;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
+  a {
+    color: $sitePurple;
+    font-size: 17px;
+    text-decoration: none;
+  
+    &:hover {
+      text-decoration: underline;
+    }
   }
-}
-
-.signup-box-wrapper hr {
-  margin-top: 30px;
-  height: 2px;
-  border-width: 0;
-  background-color: $siteDark;
 }

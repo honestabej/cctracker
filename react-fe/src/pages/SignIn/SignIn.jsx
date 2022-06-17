@@ -30,10 +30,10 @@ export default function Login({ setToken }) {
   return(
     <div>
       <HeaderDark />
-      <div className="header-bg"></div>
-      <div className="signin-container">
-        <div className="box-container">
-          <div className="signin-wrapper">
+      <div className="signin-header-bg"></div>
+      <div className="signin-page-container">
+        <div className="signin-box-container">
+          <div className="signin-box-wrapper">
             <div className="signin-title">
               <span>Welcome Back!</span>
             </div>
@@ -42,8 +42,10 @@ export default function Login({ setToken }) {
               </div>
               <div class="signin-input-container">
               </div>
-              <div class="signin-pass"><a href="#">Forgot password?</a></div>
-              <div class="signin-button-container signin-button">
+              <div class="signin-forgot-pwd">
+                <a href="#">Forgot password?</a>
+              </div>
+              <div class="signin-btn-container signin-btn">
                 <input type="submit" value="Login" />
               </div>
               <hr />

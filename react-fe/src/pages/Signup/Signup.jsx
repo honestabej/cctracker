@@ -45,7 +45,7 @@ export default function Login({ setToken }) {
               </div>
               <div class="signup-input-container">
               </div>
-              <div class="signup-btn-container signup-btn">
+              <div class="signup-btn">
                 <input type="submit" value="Sign Up" />
               </div>
               <hr />
