@@ -8,7 +8,7 @@ const InputBox = (prop) => {
         <i className={prop.icon} />
       </div>
       <div className="input-wrapper">
-        <input class="input" type="text" placeholder=" " required />
+        <input class="input" type={prop.type} placeholder=" " required />
         <div class={prop.cutType}></div>
         <label class={prop.placeholderColor}>{prop.placeholder}</label>
       </div>

@@ -28,6 +28,7 @@
 
 .header-logo {
   img {
+    cursor: pointer;
     position: absolute;
     aspect-ratio: 329/152;
     height: 50%;
@@ -108,13 +109,21 @@
   a {
     color: $siteBlack;
   }
+
+  button {
+    background-color: $siteWhite;
+  }
 }
 
 .white-font {
-  color: $siteWhite
+  color: $siteWhite;
 
   a {
     color: $siteWhite;
+  }
+
+  button {
+    background-color: $siteBlack;
   }
 }
 
@@ -186,7 +195,7 @@
   transition: 0.5s ease all;
 
   @media screen and (min-width: 450px) {
-    transform: translateX(300px);   
+    transform: translateX(100vw); 
   }
 }
 
@@ -202,7 +211,7 @@
   }
 
   i {
-    margin: auto;
+    margin-left: auto;
     cursor: pointer;
     font-size: 30px;
 
@@ -216,7 +225,6 @@
 
 .white-icon {
   color: $siteWhite;
-  transform: translateX(35px);
   transition: 0.5s ease all;
 }
 

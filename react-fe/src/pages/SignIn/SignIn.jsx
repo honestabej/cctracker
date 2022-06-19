@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './SignIn.scss';
 import PropTypes from 'prop-types';
-import HeaderDark from './../../components/Header/HeaderDark';
+import Header from './../../components/Header/Header';
+import InputBox from '../../components/InputBox/InputBox';
 
 async function loginUser(credentials) {
   return fetch('http://localhost:3001/login', {
@@ -28,31 +29,33 @@ export default function Login({ setToken }) {
   }
 
   return(
-    <div>
-      <HeaderDark />
+    <div className="signin-page-container">
+      <Header fontColor="header-nav white-font" />
       <div className="signin-header-bg"></div>
-      <div className="signin-page-container">
+      <div className="signin-page-wrapper">
         <div className="signin-box-container">
           <div className="signin-box-wrapper">
             <div className="signin-title">
               <span>Welcome Back!</span>
             </div>
             <form action="#">
-              <div className="signin-input-container">
-              </div>
-              <div class="signin-input-container">
-              </div>
-              <div class="signin-forgot-pwd">
-                <a href="#">Forgot password?</a>
-              </div>
-              <div class="signin-btn-container signin-btn">
-                <input type="submit" value="Login" />
-              </div>
-              <hr />
-              <div class="signup-link">
-                Not a member? <a href="#"> Signup now </a>
-              </div>
-            </form>
+                <div className="signin-input-container">
+                  <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder black-ph" cutType="cut black-bg email" />
+                </div>
+                <div className="signin-input-container">
+                  <InputBox icon="fa-solid fa-lock" type="password" placeholder="Password" placeholderColor="placeholder black-ph" cutType="cut black-bg password" />
+                </div>
+                <div className="signin-forgot-pwd">
+                  <a href="#">Forgot password?</a>
+                </div>
+                <div className="signin-btn-container">
+                  <input type="submit" value="Login" />
+                </div>
+                <hr />
+                <div className="signin-signup-link">
+                  Not a member? <a href="#">Signup now</a>
+                </div>
+              </form>
           </div>
         </div>
       </div>

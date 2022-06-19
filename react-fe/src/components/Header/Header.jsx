@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import classes from './Header.scss';
-import Logo from '../../images/LogoBlack.png'
+import BlackLogo from '../../images/LogoBlack.png';
+import WhiteLogo from '../../images/LogoWhite.png';
 import {BiMenuAltRight} from 'react-icons/bi';
 import {AiOutlineClose} from 'react-icons/ai';
 import { Link, useHistory } from "react-router-dom";
@@ -39,27 +40,42 @@ const Header = (prop) => {
     }
   }, [size.width]);
 
+  // Handle links
+  const logoLink = () => {
+    window.location.href="/";
+  };
+
+  const signUpLink = () => {
+    window.location.href="/signup";
+  };
+
   return (
     <header className="header-container">
       <div className="header-content">
         <div className="header-logo">
-          <img src={Logo} alt=""></img>
+          <img src={prop.logo == "BlackLogo" ? BlackLogo : WhiteLogo} alt="" onClick={logoLink}></img>
         </div>
         <div className={prop.fontColor}>
           <a href="">About</a>
-          <a href="">Sign In</a>
-          <button>Sign Up</button>
+          <a href="/signin">Sign In</a>
+          <button onClick={signUpLink}>Sign Up</button>
         </div>
         <div className={isOpen ? showNav : hideNav}>
           <ul>
             <li><a href="">About</a></li>
-            <li><a href="">Sign In</a></li>
-            <li><a href="">Sign Up</a></li>
+            <li><a href="/signin">Sign In</a></li>
+            <li><a href="/signup">Sign Up</a></li>
           </ul>
         </div>
-        <div className={isOpen ? whiteIcon : blackIcon}>
-          {isOpen ? closeIcon : menuIcon}
-        </div>
+        {prop.logo == "BlackLogo" ? 
+          <div className={isOpen ? whiteIcon : blackIcon}>
+            {isOpen ? closeIcon : menuIcon}
+          </div>
+        : 
+          <div className={whiteIcon}>
+            {isOpen ? closeIcon : menuIcon}
+          </div>
+        }
       </div>
     </header>
   );

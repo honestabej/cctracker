@@ -1,30 +1,37 @@
 @import './../../globalStyles/variables.scss';
 
-.signup-header-bg {
-  top: 0;
+
+.signup-page-container {
+  position: absolute;
+  overflow: hidden;
+  height: 100vh;
   width: 100%;
+  background-color: $siteDark;
+}
+
+.signup-header-bg {
   height: 70px;
+  width: 100%;
+  top: 0;
   background-color: $siteBlack;
 }
 
-.signup-page-container {
+.signup-page-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 70px);
-  font-family: 'Poppins', sans-serif;
-  background: $siteDark;
-  overflow: show;
 }
 
 .signup-box-container {
+  margin: auto;
+  height: 585px;
   width: 450px;
   padding: 0 20px;
-  margin: auto;
 }
 
-// Floating box around sign in items
 .signup-box-wrapper {
+  height: 100%;
   width: 100%;
   border-radius: 5px;
   background: 
@@ -34,6 +41,10 @@
   background-size: cover;
   background-position: bottom;
 
+  form {
+    padding: 10px 15px 25px 15px;
+  }
+
   hr {
     margin-top: 30px;
     height: 2px;
@@ -42,7 +53,6 @@
   }
 }
 
-// Area containing title text
 .signup-title {
   height: 90px;
   border-radius: 5px 5px 0 0;
@@ -54,14 +64,6 @@
   justify-content: center;
 }
 
-// Keep signup items inside floating box
-.signup-box-wrapper {
-  form {
-    padding: 10px 15px 25px 15px;
-  }
-}
-
-// Spacing for signup items
 .signup-input-container {
   position: relative;
   height: $inputHeight;
@@ -70,7 +72,6 @@
   background-color: $siteDark;
 }
 
-// Alignment of signup button
 .signup-btn{
   text-align: center;
 
@@ -96,7 +97,6 @@
   }
 }
 
-// Not a member spacing
 .signin-link {
   text-align: center;
   color: $siteWhite;

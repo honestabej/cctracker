@@ -6,7 +6,7 @@ import Header from './../../components/Header/Header';
 function Home() {
   return (
     <div className="home-page-container">
-      <Header fontColor="header-nav black-font"/>
+      <Header logo="BlackLogo" fontColor="header-nav black-font"/>
       <div className="home-row">
         <div className="home-text-col">
           <div className="home-main-text">
