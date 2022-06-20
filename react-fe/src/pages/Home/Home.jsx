@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Home.scss';
 import HomeImg from './../../images/HomeImg.png';
 import Header from './../../components/Header/Header';
+import InputBox from '../../components/InputBox/InputBox';
 
 function Home() {
   return (
@@ -17,12 +18,11 @@ function Home() {
             Let us do the managing so you can feel responsible doing the spending.
           </div>
           <div className="home-signup-wrapper">
-            <div className="home-signup-input-wrapper">
-              
-            </div>
-            <div className="home-signup-btn-wrapper">
-              <input class="home-signup-btn" type="submit" value="Signup" />
-            </div>
+            <form action="#">
+              <div className="home-signup-input-container">
+                <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder black-ph" cutType="cut white-bg email" />
+              </div>
+            </form>
           </div>
         </div>
         <div className="home-pic-col">

@@ -39,23 +39,23 @@ export default function Login({ setToken }) {
               <span>Welcome Back!</span>
             </div>
             <form action="#">
-                <div className="signin-input-container">
-                  <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder black-ph" cutType="cut black-bg email" />
-                </div>
-                <div className="signin-input-container">
-                  <InputBox icon="fa-solid fa-lock" type="password" placeholder="Password" placeholderColor="placeholder black-ph" cutType="cut black-bg password" />
-                </div>
-                <div className="signin-forgot-pwd">
-                  <a href="#">Forgot password?</a>
-                </div>
-                <div className="signin-btn-container">
-                  <input type="submit" value="Login" />
-                </div>
-                <hr />
-                <div className="signin-signup-link">
-                  Not a member? <a href="#">Signup now</a>
-                </div>
-              </form>
+              <div className="signin-input-container">
+                <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder black-ph" cutType="cut white-bg email" />
+              </div>
+              <div className="signin-input-container">
+                <InputBox icon="fa-solid fa-lock" type="password" placeholder="Password" placeholderColor="placeholder black-ph" cutType="cut black-bg password" />
+              </div>
+              <div className="signin-forgot-pwd">
+                <a href="#">Forgot password?</a>
+              </div>
+              <div className="signin-btn-container">
+                <input type="submit" value="Login" />
+              </div>
+              <hr />
+              <div className="signin-signup-link">
+                Not a member? <a href="#">Signup now</a>
+              </div>
+            </form>
           </div>
         </div>
       </div>
