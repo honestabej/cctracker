@@ -17,23 +17,46 @@
 
   @media screen and (min-width: 950px) {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
-    padding: 100px 0px 0px 0px;
+    padding: 100px 30px 0px 30px;
+  }
+}
+
+.home-text-col-container {
+  width: 100%;
+
+  @media screen and (min-width: 950px) {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .home-text-col {
-  width: 100%;
+  @media screen and (min-width: 950px) {
+    transform: translateY(-70px);
+  }
 }
 
 .home-main-text {
   width: 100%;
   font-size: 40px;
-  font-weight: bold; 
-  line-height: 40px;
+  line-height: 44px;
+  font-weight: 800; 
   text-align: center;
+  margin-bottom: 15px;
+
+  @media screen and (min-width: 542px) {
+    font-size: 56px;
+    line-height: 60px;
+  }
 
   @media screen and (min-width: 760px) {
+    font-size: 72px;
+    line-height: 76px;
     text-align: left;
   }
 }
@@ -41,16 +64,17 @@
 .home-sub-text {
   width: 100%;
   font-size: 20px; 
-  line-height: 25px;
+  line-height: 28px;
   text-align: center;
 
   @media screen and (min-width: 760px) {
+    font-size: 24px; 
+    line-height: 32px;
     text-align: left;
   }
 }
 
 .home-signup-container {
-  background-color: green;
   height: 115px; // 2 $inputHeight + 20px for cut + 5px spacing in between
   width: 100%;
   max-width: 550px;
@@ -66,201 +90,87 @@
     width: 550px;
     margin: 0;
   }
-
-  // @media screen and (min-width: 1000px) {
-  //   width: 100%;
-  //   margin: 0;
-  // }
 }
 
 .home-signup-input {
-  background-color: red;
   height: $inputHeight;
   width: 100%;
   margin-bottom: 5px;
 
   @media screen and (min-width: 542px) {
-    width: calc(100% - 5px - 100px);
+    width: calc(100% - 5px - 150px);
     margin-right: 5px;
   }
 }
 
 .home-signup-btn {
-  background-color: blue;
   height: $inputHeight;
   width: 100%;
 
+  input {
+    height: $inputHeight;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: $borderRadius;
+    background: $siteOrange;
+    color: $siteWhite;
+    border: 1px solid $siteOrange;
+    transition: 0.3s ease all;
+  
+    &:hover {
+      background: $siteWhite;
+      color: $siteOrange;
+    }
+  }
+
   @media screen and (min-width: 542px) {
-    width: 100px;
+    width: 150px;
   }
 }
 
 .home-pic-col {
-  background-color: aqua;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 20px;
+  position: relative;
+  text-align: initial;
 
   @media screen and (min-width: 950px) {
     margin-top: 0px;
+    height: 752px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-
-
-
-
-// .home-page-container {
-//   position: absolute;
-//   overflow: hidden;
-//   height: 100vh;
-//   width: 100%;
-//   background: linear-gradient(45deg, rgba($siteWhite, 0.9), rgba($siteSecondWhite, 1));
-// }
-
-// .home-row {
-//   height: calc(100vh - 70px); // 70px is $headerHeight, but that var doesnt work in calc()
-//   width: 100%;
-//   max-width: $maxWidth;
-//   margin: 80px auto auto auto;
-
-//   @media screen and (min-width: $medSize) {
-//     margin: 100px auto auto auto;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     transform: translateY(-70px);
-//   }
-// }
-
-// .home-text-col {
-//   width: 100%;
-//   position: relative;
-
-//   @media screen and (min-width: $medSize) {
-//     width: 45%;
-//   }
-// }
-
-// .home-main-text {
-//   width: 100%;
-//   font-size: 40px;
-//   font-weight: bold; 
-//   line-height: 40px;
-//   text-align: center;
-//   padding: 5px 20px;
-
-//   @media screen and (min-width: $medSize) {
-//     font-size: 50px;
-//     line-height: 50px;
-//     text-align: left; 
-//   }
-
-//   @media screen and (min-width: $regSize) { 
-//     font-size: 60px;
-//     line-height: 60px;
-//   }
-
-// }
-
-// .home-sub-text {
-//   width: 100%;
-//   font-size: 20px; 
-//   line-height: 25px;
-//   text-align: center;
-//   padding: 5px 20px;
-
-//   @media screen and (min-width: $medSize) {
-//    text-align: left; 
-//   }
-// }
-
-// .home-signup-wrapper {
-//   background-color: green;
-//   height: 125px; // Two $inputHeight, 20px for cut, 5px for spacing, 10px for padding
-//   width: 100%;
-//   padding-left: 20px;
-//   padding-right: 20px;
-
-//   @media screen and (min-width: $minSize) {
-//     height: 75px; // One $inputHeight, 10px for padding
-//     display: flex;
-//   } 
-
-//   form {
-//     padding: 10px 15px 25px 15px;
-//   }
-// }
-
-// .home-signup-input-container {
-//   background-color: purple;
-//   position: relative;
-//   height: $inputHeight;
-//   // transform: translateY(-20px);
-
-//   @media screen and (min-width: $minSize) {
-//     margin-right: 5px;
-//     width: calc(75% - 5px);
-//   }
-// }
-
-// .home-signup-btn-wrapper { 
-//   background-color: red;
-//   position: relative;
-//   text-align: center;
-//   height: $inputHeight;
-//   margin-top: 5px;
-//   // transform: translateY(-20px);
-
-//   input {
-//     cursor: pointer;
-//     outline: none;
-//     height: 100%;
-//     width: 100%;
-//     font-size: 20px;
-//     font-weight: 500;
-//     padding-left: 0px;
-//     border-radius: 20px;
-//     background: $siteWhite;
-//     color: $siteOrange;
-//     border: 1px solid $siteOrange;
-//     transition: 0.3s ease all;
+.home-pic {
+  aspect-ratio: 783 / 565;
+  width: 100%;
   
-//     &:hover {
-//       background: $siteOrange;
-//       color: $siteWhite;
-//     }
-//   }
 
-//   @media screen and (min-width: $minSize) {
-//     margin-top: 0px;
-//     width: 25%;
-//     // transform: translateY(-20px);
-//   }
-// }
+  @media screen and (min-width: 542px) {
+    width: 600px;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-// .home-signup-btn {
+  @media screen and (min-width: 760px) {
+    width: 675px;
+    left: 0%;
+    transform: translateX(0%);
+  }
 
-// }
-
-// .home-pic-col {
-//   width: 100%;
-//   margin-top: 20px;
-
-//   @media screen and (min-width: $medSize) {
-//     margin-top: 0;
-//     width: 55%;
-//     height: 400px;
-//   }
-// }
-
-// .home-pic {
-//   width: 90%;
-//   aspect-ratio: 783 / 565;
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-
-//   @media screen and (min-width: $medSize) {
-//     width: 100%;
-//   }
-// }
+  @media screen and (min-width: 950px) {
+    width: 675px;
+    left: 0%;
+    transform: translateX(0%);
+    transform: translateY(-70px);
+  }
+}

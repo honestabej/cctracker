@@ -9,53 +9,30 @@ function Home() {
       <div className="home-page-container">
         <Header logo="BlackLogo" fontColor="header-nav black-font"/>
         <div className="content-row">
-          <div className="home-text-col">
-            <div className="home-main-text">
-              Build a budget while building your credit
-            </div>
-            <div className="home-sub-text">
-              Managing a budget with multiple cards and accounts can be tough. 
-              Let us do the managing so you can feel responsible doing the spending.
-            </div>
-            <div className="home-signup-container">
-              <div className="home-signup-input">
-              <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder black-ph" cutType="cut black-bg email" />
+          <div className="home-text-col-container">
+            <div className="home-text-col">
+              <div className="home-main-text">
+                Build a budget while building your credit
               </div>
-              <div className="home-signup-btn">
-                <button>TEST</button>
+              <div className="home-sub-text">
+                Managing a budget with multiple cards and accounts can be tough. 
+                Let us do the managing so you can feel responsible doing the spending.
+              </div>
+              <div className="home-signup-container">
+                <div className="home-signup-input">
+                <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder white-ph" cutType="cut white-bg email" />
+                </div>
+                <div className="home-signup-btn">
+                  <input type="submit" value="Sign Up" />
+                </div>
               </div>
             </div>
           </div>
           <div className="home-pic-col">
-            pic
+            <img class="home-pic" src={HomeImg} />
           </div>
         </div>
       </div>
-
-    // <div className="home-page-container">
-    //   <Header logo="BlackLogo" fontColor="header-nav black-font"/>
-    //   <div className="home-row">
-    //     <div className="home-text-col">
-    //       <div className="home-main-text">
-    //         Build a budget while building your credit
-    //       </div>
-    //       <div className="home-sub-text">
-    //         Managing a budget with multiple cards and accounts can be tough. 
-    //         Let us do the managing so you can feel responsible doing the spending.
-    //       </div>
-    //       <div className="home-signup-wrapper">
-    //         <form action="#">
-    //           <div className="home-signup-input-container">
-    //             <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder black-ph" cutType="cut white-bg email" />
-    //           </div>
-    //         </form>
-    //       </div>
-    //     </div>
-    //     <div className="home-pic-col">
-    //       <img class="home-pic" src={HomeImg} />
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 
