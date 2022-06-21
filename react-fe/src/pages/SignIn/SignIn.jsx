@@ -40,7 +40,7 @@ export default function Login({ setToken }) {
             </div>
             <form action="#">
               <div className="signin-input-container">
-                <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder black-ph" cutType="cut white-bg email" />
+                <InputBox icon="fa-solid fa-envelope" type="text" placeholder="E-Mail" placeholderColor="placeholder black-ph" cutType="cut black-bg email" />
               </div>
               <div className="signin-input-container">
                 <InputBox icon="fa-solid fa-lock" type="password" placeholder="Password" placeholderColor="placeholder black-ph" cutType="cut black-bg password" />
