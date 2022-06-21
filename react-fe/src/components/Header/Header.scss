@@ -86,21 +86,21 @@
     }
   }
   
-    button {
-      cursor: pointer;
-      outline: none;
-      padding: 5px 10px;
-      border-radius: 20px;
-      background: $siteWhite;
-      color: $siteOrange;
-      border: 1px solid $siteOrange;
-      transition: 0.3s ease all;
+  button {
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: $siteWhite;
+    color: $siteOrange;
+    border: 1px solid $siteOrange;
+    transition: 0.3s ease all;
 
-      &:hover {
-        background: $siteOrange;
-        color: $siteWhite;
-      }
+    &:hover {
+      background: $siteOrange;
+      color: $siteWhite;
     }
+  }
 }
 
 .black-font {
@@ -219,7 +219,6 @@
       font-size: 35px;
       transition: 0.5s ease all;
     }
-
   }
 }
 

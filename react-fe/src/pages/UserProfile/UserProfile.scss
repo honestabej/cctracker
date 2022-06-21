@@ -1,0 +1,194 @@
+@import './../../globalStyles/variables.scss';
+
+.user-page-container {
+  position: absolute;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  background-color: $siteDark;
+}
+
+.user-header-bg {
+  top: 0;
+  width: 100%;
+  height: $headerHeight;
+  background-color: $siteBlack;
+}
+
+.user-page-wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 15px 10px 0px 10px;
+}
+
+.user-settings-container {
+  height: 200px;
+  width: 100%;
+  background-color: $siteBlack;
+  border-radius: $borderRadius;
+  padding: 10px;
+}
+
+.user-settings {
+  height: 80%;
+  width: 100%;
+  display: flex;
+}
+
+.profile-picture-container {
+  height: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background: 
+    url('../../images/DefaultUser.png'),
+    grey;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.user-info-container {
+  height: 100%;
+  width: calc(100% - 100px);
+  padding: 10px 10px;
+  color: $siteWhite;
+  font-size: 18px;
+}
+
+.user-info {
+  padding-top: 10px;
+
+  a {
+    float: right;
+    color: $sitePurple;
+  }
+}
+
+.user-logout-btn {
+  height: 20%;
+  width: 100%;
+
+  button {
+    height: 100%;
+    width: 75%;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    margin:0 auto;
+    display:block;
+    border-radius: $borderRadius;
+    background: $siteBlack;
+    color: red;
+    border: 1px solid red;
+    transition: 0.3s ease all;
+  
+    &:hover {
+      font-size: 20px;
+    }
+  }
+}
+
+.cycle-settings-container {
+  height: fit-content;
+  width: 100%;
+  background-color: $siteBlack;
+  border-radius: $borderRadius;
+  padding: 0px 10px 10px 10px;
+  margin-top: 10px;
+}
+
+.cycle-title {
+  text-align: center;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 600;
+  color: $siteWhite;
+}
+
+.cycle-input-container {
+  height: 65px; // 1 $inputHeight + 20px cut
+  width: 100%;
+  padding-top: 20px;
+}
+
+.cycle-input {
+  height: $inputHeight;
+  width: 100%;
+}
+
+.cycle-calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px; // 1 $inputHeight + 20px cut
+  width: 100%;
+  padding-top: 20px;
+}
+
+.cycle-calendar-text {
+  color: $siteWhite;
+  font-size: 25px;
+  font-weight: 500;
+  width: calc(100% - 150px);
+  padding-left: 13px;
+}
+
+.cycle-datepicker-container {
+  width: 150px;
+}
+
+.cycle-calendar-btn {
+  height: $inputHeight;
+  width: 100%;
+  float: right;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: $borderRadius;
+  background: $siteOrange;
+  color: $siteWhite;
+  border: 1px solid $siteOrange;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background: $siteBlack;
+    color: $siteOrange;
+  }
+}
+
+.cycle-save-btn {
+  text-align: center;
+  padding-top: 15px;
+
+  input {
+    height: $inputHeight;
+    width: 85%;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: $siteBlack;
+    color: $siteOrange;
+    border: 1px solid $siteOrange;
+    transition: 0.3s ease all;
+  
+    &:hover {
+      background: $siteOrange;
+      color: $siteWhite;
+    }
+  }
+}

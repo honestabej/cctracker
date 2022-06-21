@@ -1,0 +1,70 @@
+@import './../../globalStyles/variables.scss';
+
+.headerlogin-container {
+  font-family: $Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  background: transparent;
+  z-index: 100;
+  width: 100%;
+  height: $headerHeight;
+  transition: 0.3s ease all;
+  padding: 0px 35px;
+
+  @media screen and (min-width: $minSize) {
+    padding: 0px 30px;
+  }
+}
+
+.headerlogin-content {
+  display: flex;
+  position: relative;
+  margin: auto;
+  max-width: $maxWidth;
+  height: 100%;
+  justify-content: space-between;  
+}
+
+.headerlogin-logo {
+  img {
+    cursor: pointer;
+    position: absolute;
+    aspect-ratio: 329/152;
+    height: 50%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: 0.3s ease all;
+
+    &:hover {
+      height: 60%;
+      transition: 0.3s ease all;
+    }
+
+    &:active {
+      height: 60%;
+      transition: 0.3s ease all;
+    }
+  }
+}
+
+.headerlogin-to-page {
+  height: 100%;
+  width: 70px;
+  align-items: center;
+  position: relative;
+  display: flex; // For mobile
+  color: $siteWhite;
+
+  i {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 30px;
+
+    &:hover {
+      font-size: 35px;
+      transition: 0.5s ease all;
+    }
+  }
+}

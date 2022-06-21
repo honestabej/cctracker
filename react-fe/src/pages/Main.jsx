@@ -5,7 +5,7 @@ import Home from './Home/Home';
 import SignUp from './SignUp/SignUp';
 import SignIn from './SignIn/SignIn';
 import Dashboard from './Dashboard/Dashboard';
-import Preferences from './Preferences/Preferences';
+import UserProfile from './UserProfile/UserProfile';
 
 const Main = () => {
   return (
@@ -14,7 +14,7 @@ const Main = () => {
       <Route exact path='/signup' component={SignUp}></Route>
       <Route exact path='/signin' component={SignIn}></Route>
       <Route exact path='/dashboard' component={Dashboard}></Route>
-      <Route exact path='/preferences' component={Preferences}></Route>
+      <Route exact path='/user' component={UserProfile}></Route>
     </Switch>
   );
 }
