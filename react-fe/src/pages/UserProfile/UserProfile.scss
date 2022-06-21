@@ -146,7 +146,7 @@
 }
 
 .cycle-calendar-btn {
-  height: $inputHeight;
+  height: 40px;
   width: 100%;
   float: right;
   font-size: 20px;
@@ -155,7 +155,7 @@
   cursor: pointer;
   outline: none;
   padding: 5px 10px;
-  border-radius: $borderRadius;
+  border-radius: 20px;
   background: $siteOrange;
   color: $siteWhite;
   border: 1px solid $siteOrange;
@@ -180,7 +180,7 @@
     cursor: pointer;
     outline: none;
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: $borderRadius;
     background: $siteBlack;
     color: $siteOrange;
     border: 1px solid $siteOrange;
