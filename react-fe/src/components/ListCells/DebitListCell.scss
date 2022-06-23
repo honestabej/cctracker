@@ -1,0 +1,11 @@
+@import './../../globalStyles/variables.scss';
+
+li#debit-cell {
+  background: transparent;
+  height: 66px;
+  width: 100%;
+  padding: 5px;
+  border-radius: $borderRadius;
+  border: 2px solid $siteBlack;
+  margin: 2px 0px;
+}
