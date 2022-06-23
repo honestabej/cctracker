@@ -4,8 +4,8 @@
   font-family: $Poppins;
   font-size: 20px;
   font-weight: 600;
-  position: absolute;
-  background: transparent;
+  position: fixed;
+  background-color: $siteBlack;
   z-index: 100;
   width: 100%;
   height: $headerHeight;

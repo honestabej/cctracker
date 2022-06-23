@@ -1,21 +1,149 @@
-.d-container {
-    background-color: green;
-    display: flex;
-    height: 65px;
-    width: 500px;
+@import './../../globalStyles/variables.scss';
+
+.dashboard-page-container {
+  position: absolute;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100%;
+  background-color: $siteDark;
 }
 
-.d-input-wrapper {
-    background-color: red;
-    height: 45px;
-    width: 395px;
-    margin-right: 5px;
-    margin-top: auto;
+.dashboard-header-bg {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: $headerHeight;
+  background-color: $siteBlack;
 }
 
-.d-btn-wrapper {
-    background-color: blue;
-    height: 45px;
-    width: 100px;
-    margin-top: auto;
+.dashboard-page-wrapper {
+  width: 100%;
+  max-width: $maxWidth;
+  padding: 15px 10px 0px 10px;
+  margin-top: 70px;
 }
+
+.purchases-col {
+  background-color: $siteBlack;
+  width: 100%;
+  border-radius: $borderRadius;
+  padding: 10px;
+}
+
+.graph {
+  // background-color: aqua;
+  height: 200px;
+  width: 100%;
+}
+
+.under-graph-text {
+  color: $siteWhite;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.purchase-list {
+  color: $siteWhite;
+  background-color: $siteDark;
+  padding: 5px;
+  border-radius: $borderRadius;
+
+  ul {
+    height: 175px;
+    overflow-y: auto;
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 5px;
+
+    li {
+      background: transparent;
+      height: 66px;
+      width: 100%;
+      padding: 5px;
+      border-radius: $borderRadius;
+      border: 2px solid $siteBlack;
+      margin: 2px 0px;
+    }
+  }
+}
+
+.purchase-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.title-amt {
+  height: 40px;
+  width: 100%;
+  display: flex;
+}
+
+.title {
+  width: 75%;
+  line-height: 16px;
+}
+
+.amt {
+  width: 25%;
+  line-height: 16px;
+  text-align: right;
+}
+
+.date {
+  height: 15px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.cards-col {
+  width: 100%;
+  padding: 10px;
+  color: $siteWhite;
+
+  ul {
+    list-style: none;
+    padding-left: 0px;
+    
+    li {
+      height: 70px;
+      width: 100%;
+      background-color: $siteBlack;
+      margin: 5px 0px;
+      border-radius: $borderRadius;
+    }
+
+    li#credit {
+      display: flex;
+
+      span#name {
+        height: 10px;
+        width: 200px;
+      }
+
+      span#outstanding {
+        height: 10px;
+      }
+
+      span#loc {
+        height: 10px;
+      }
+    }
+
+    li#add-new {
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.cards-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+

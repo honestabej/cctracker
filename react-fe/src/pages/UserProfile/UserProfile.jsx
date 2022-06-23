@@ -17,7 +17,6 @@ const UserProfile = (prop) => {
   return (
     <div className="user-page-container">
       <HeaderLogin currentPage="UserProfile"/>
-      <div className="user-header-bg"></div>
       <div className="user-page-wrapper">
         <div className="user-settings-container">
           <div className="user-settings">
