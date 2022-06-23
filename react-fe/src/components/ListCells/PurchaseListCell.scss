@@ -2,7 +2,8 @@
 
 li#purchase-cell {
   background: transparent;
-  height: 66px;
+  height: fit-content;
+  min-height: 70px;
   width: 100%;
   padding: 5px;
   border-radius: $borderRadius;
@@ -19,9 +20,12 @@ li#purchase-cell {
 .title {
   width: 75%;
   line-height: 16px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .amt {
+  min-width: 100px;
   width: 25%;
   line-height: 16px;
   text-align: right;

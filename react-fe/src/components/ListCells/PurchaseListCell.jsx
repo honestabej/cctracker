@@ -5,11 +5,11 @@ const PurchaseListCell = (prop) => {
   return (
     <li id="purchase-cell">
       <div className="title-amt">
-        <div className="title">TITLE <br /> CONTINUED</div>
-        <div className="amt">$XXXX.XX</div>
+        <div className="title">{prop.title}</div>
+        <div className="amt">${prop.amt}</div>
       </div>
       <div className="date">
-        <span>XX/XX/XXXX</span>
+        <span>{prop.date}</span>
       </div>
     </li>
   )
