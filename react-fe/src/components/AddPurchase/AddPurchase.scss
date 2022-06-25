@@ -1,0 +1,158 @@
+@import './../../globalStyles/variables.scss';
+
+.add-purchase-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background: rgba($color: black, $alpha: 0.4);
+}
+
+.hide-add {
+  display: none;
+}
+
+.add-purchase-page-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-purchase-box-container {
+  width: 450px;
+  padding: 0 20px;
+}
+
+.add-purchase-box-wrapper {
+  width: 100%;
+  border-radius: 5px;
+  background-color: $siteBlack;
+
+  form {
+    padding: 10px 15px 25px 15px;
+  }
+
+  hr {
+    margin-top: 30px;
+    height: 2px;
+    border-width: 0;
+    background-color: $siteDark;
+  }
+}
+
+.add-purchase-title {
+  height: 60px;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-purchase-input-container {
+  height: $inputHeight;
+  margin-bottom: 30px;
+  position: relative;
+  border-radius: $borderRadius;
+  background-color: $siteDark;
+}
+
+.add-purchase-btn-container {
+  text-align: center;
+
+  input {
+    height: $inputHeight;
+    width: 85%;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: $siteBlack;
+    color: $siteOrange;
+    border: 1px solid $siteOrange;
+    transition: 0.3s ease all;
+  
+    &:hover {
+      background: $siteOrange;
+      color: $siteWhite;
+    }
+  }
+}
+
+.purchase-calendar-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.purchase-calendar-text {
+  color: $siteWhite;
+  font-size: 25px;
+  font-weight: 500;
+  width: calc(100% - 150px);
+  padding-left: 13px;
+}
+
+.purchase-datepicker-container {
+  width: 150px;
+}
+
+.purchase-calendar-btn {
+  height: 40px;
+  width: 100%;
+  float: right;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: $siteOrange;
+  color: $siteWhite;
+  border: 1px solid $siteOrange;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background: $siteBlack;
+    color: $siteOrange;
+  }
+}
+
+.purchase-save-btn {
+  text-align: center;
+  padding-top: 15px;
+
+  @media screen and (min-width: 650px) {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    transform: translateX(-10px);
+  }
+
+  input {
+    height: 40px;
+    width: 85%;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: $borderRadius;
+    background: $siteBlack;
+    color: $siteOrange;
+    border: 1px solid $siteOrange;
+    transition: 0.3s ease all;
+  
+    &:hover {
+      background: $siteOrange;
+      color: $siteWhite;
+    }
+  }
+}

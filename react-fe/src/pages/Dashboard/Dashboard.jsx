@@ -7,6 +7,12 @@ import CreditListCell from '../../components/ListCells/CreditListCell';
 import DebitListCell from '../../components/ListCells/DebitListCell';
 
 export default function Dashboard() {
+
+  // onClicks
+  const addCard = () => {
+    console.log("click");
+  };
+
   return(
     <div className="dashboard-page-container">
       <HeaderLogin currentPage="Dashboard"/>
@@ -39,13 +45,13 @@ export default function Dashboard() {
             <DebitListCell name="Abe's Debit" available="458.97" />
             <DebitListCell name="Abe and Shae Debit" available="1452.98" />
             <DebitListCell name="Shae's Debit" available="398.74" />
-
-            <li id="add-new">
+            <li id="add-new" onClick={addCard}>
               <i class="fa-solid fa-plus" />
             </li>
           </ul>
         </div>
       </div>
+      <button className="add-purchase-btn"><i class="fa-solid fa-plus" /> Purchase</button>
     </div>
          
   );
