@@ -8,7 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 
 const Header = (prop) => {
   const menuIcon = <i class="fa-solid fa-bars" onClick={() => setOpen(!isOpen)} />;
-  const closeIcon = <i class="fa-solid fa-xmark" onClick={() => setOpen(!isOpen)} />
+  const closeIcon = <i class="fa-solid fa-xmark" onClick={() => setOpen(!isOpen)} />;
 
   const whiteFont = "header-nav white-font";
   const blackFont = "header-nav black-font";

@@ -4,24 +4,23 @@ import InputBox from '../../components/InputBox/InputBox';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const AddPurchase = (prop) => {
+const AddPurchase = ({ sendDataToParent }) => {
+  // Variables for the calendar
   const [startDate, setStartDate] = useState(new Date());
-
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
     <button className="purchase-calendar-btn" onClick={onClick} ref={ref}>
       {value}
     </button>
   ));
 
-  const addPurchase = () => {
-    document.getElementById("add-purchase-container").classList.add("hide-add");
-  };
-
   return (
     <div className="add-purchase-container">
       <div className="add-purchase-page-wrapper">
         <div className="add-purchase-box-container">
           <div className="add-purchase-box-wrapper">
+            <div className="add-purchase-close">
+              <i class="fa-solid fa-xmark" onClick={() => { sendDataToParent(false); }} />
+            </div>
             <div className="add-purchase-title">
               <span>Add Purchase</span>
             </div>
@@ -37,15 +36,11 @@ const AddPurchase = (prop) => {
                   Date:
                 </div>
                 <div className="purchase-datepicker-container">
-                  <DatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    customInput={<ExampleCustomInput />}
-                  />
+                  <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} customInput={<ExampleCustomInput />} />
                 </div>
               </div>
               <div className="add-purchase-btn-container">
-                <input type="submit" value="Add Purchase" onClick={addPurchase} />
+                <input type="submit" value="Add Purchase" />
               </div>
             </form>
           </div>

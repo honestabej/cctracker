@@ -41,8 +41,20 @@
   }
 }
 
+.add-purchase-close {
+  text-align: right;
+
+  i {
+    padding: 10px 15px 0px 0px;
+    color: white;
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 30px;
+  }
+}
+
 .add-purchase-title {
-  height: 60px;
+  height: fit-content;
   border-radius: 5px 5px 0 0;
   color: #fff;
   font-size: 30px;

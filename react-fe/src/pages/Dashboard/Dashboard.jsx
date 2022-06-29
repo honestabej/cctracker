@@ -1,16 +1,18 @@
-import React from 'react';
+import React, {useEffect, forwardRef, useState} from 'react';
 import './Dashboard.scss';
 import HeaderLogin from '../../components/Header/HeaderLogin';
 import InputBox from './../../components/InputBox/InputBox';
 import PurchaseListCell from '../../components/ListCells/PurchaseListCell';
 import CreditListCell from '../../components/ListCells/CreditListCell';
 import DebitListCell from '../../components/ListCells/DebitListCell';
+import AddPurchase from '../../components/AddPurchase/AddPurchase';
 
 export default function Dashboard() {
+  const [purchaseIsOpen, purchaseSetOpen] = useState(false);
+  const [cardIsOpen, cardSetOpen] = useState(false); 
 
-  // onClicks
-  const addCard = () => {
-    console.log("click");
+  const sendDataToParent = (index) => { // the callback. Use a better name
+    purchaseSetOpen(index);
   };
 
   return(
@@ -45,14 +47,16 @@ export default function Dashboard() {
             <DebitListCell name="Abe's Debit" available="458.97" />
             <DebitListCell name="Abe and Shae Debit" available="1452.98" />
             <DebitListCell name="Shae's Debit" available="398.74" />
-            <li id="add-new" onClick={addCard}>
+            <li id="add-new" onClick={() => cardSetOpen(true)}>
               <i class="fa-solid fa-plus" />
             </li>
           </ul>
         </div>
       </div>
-      <button className="add-purchase-btn"><i class="fa-solid fa-plus" /> Purchase</button>
+      <button className="add-purchase-btn" onClick={() => {purchaseSetOpen(true)}}>
+        <i class="fa-solid fa-plus" /> Purchase
+      </button>
+      {purchaseIsOpen ? <AddPurchase sendDataToParent={sendDataToParent}/> : ""}
     </div>
-         
   );
 }
