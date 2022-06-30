@@ -29,7 +29,7 @@ const AddPurchase = ({ sendDataToParent }) => {
                 <InputBox icon="fa-solid fa-credit-card" type="text" placeholder="Purchase" placeholderColor="placeholder black-ph" cutType="cut black-bg purchase" />
               </div>
               <div className="add-purchase-input-container">
-                <InputBox icon="fa-solid fa-dollar-sign" type="password" placeholder="Amount" placeholderColor="placeholder black-ph" cutType="cut black-bg amount" />
+                <InputBox icon="fa-solid fa-dollar-sign" type="text" placeholder="Amount" placeholderColor="placeholder black-ph" cutType="cut black-bg amount" />
               </div>
               <div className="purchase-calendar-container">
                 <div className="purchase-calendar-text">

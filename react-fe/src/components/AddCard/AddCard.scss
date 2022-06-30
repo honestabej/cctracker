@@ -1,0 +1,112 @@
+@import './../../globalStyles/variables.scss';
+
+.add-card-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background: rgba($color: black, $alpha: 0.4);
+}
+
+.add-card-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-card-box-container {
+  width: 450px;
+  padding: 0 20px;
+}
+
+.add-card-box-wrapper {
+  width: 100%;
+  border-radius: 5px;
+  background-color: $siteBlack;
+
+  form {
+    padding: 10px 15px 25px 15px;
+  }
+}
+
+.add-card-close {
+  text-align: right;
+
+  i {
+    padding: 10px 15px 0px 0px;
+    color: white;
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 30px;
+  }
+}
+
+.add-card-title {
+  height: fit-content;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.toggleCheckbox {
+  display: none;
+}
+
+.toggleContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  border-radius: 20px;
+  background: $siteDark;
+  font-weight: bold;
+  color: #343434;
+  cursor: pointer;
+  margin: 10px auto;
+}
+
+.toggleContainer::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0%;
+  border-radius:20px;
+  background: $siteOrange;
+  transition: all 0.3s;
+}
+
+.toggleContainer div {
+  padding: 6px;
+  text-align: center;
+  z-index: 1;
+}
+
+.toggleCheckbox:checked + .toggleContainer::before {
+  left: 50%;
+}
+
+.toggleCheckbox:checked + .toggleContainer div:first-child{
+  color: $sitePurple;
+  transition: color 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer div:last-child{
+  color: $siteBlack;
+  transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:first-child{
+  color: $siteBlack;
+  transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:last-child{
+  color: $sitePurple;
+  transition: color 0.3s;
+}
