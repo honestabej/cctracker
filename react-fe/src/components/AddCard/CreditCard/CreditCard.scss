@@ -1,0 +1,34 @@
+@import './../../../globalStyles/variables.scss';
+
+.add-credit-input-container {
+  height: $inputHeight;
+  margin-bottom: 30px;
+  position: relative;
+  border-radius: $borderRadius;
+  background-color: $siteDark;
+}
+
+.add-credit-btn-container {
+  text-align: center;
+
+  input {
+    height: $inputHeight;
+    width: 85%;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: $siteBlack;
+    color: $siteOrange;
+    border: 1px solid $siteOrange;
+    transition: 0.3s ease all;
+  
+    &:hover {
+      background: $siteOrange;
+      color: $siteWhite;
+    }
+  }
+}
