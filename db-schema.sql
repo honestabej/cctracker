@@ -192,21 +192,21 @@ DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
 -- Queries below --
--- Get username of userID
-SELECT username FROM Users WHERE userID = $$$;
 
--- Get password of a username
+-- Get username from userID
+SELECT username FROM Users WHERE userid = $$$;
 
--- Get the budget of a user
+-- Post new userid, username, email, password to Users
+INSERT INTO Users (userid, username, email, password) VALUES ($$$, $$$, $$$, $$$);
 
--- Get all cards of a user
+-- Get password from email
+SELECT password FROM Users WHERE email = $$$;
 
--- Get all purchases of a user's cycle
+-- Get userid from email/password
+SELECT userid FROM Users WHERE (email = $$$ AND password = $$$);
 
--- Add Cycle to User
+-- Update email from userid
+UPDATE Users SET email = $$$, WHERE userid = $$$;
 
--- Add credit card to User
-
--- Add debit card to user 
-
--- Add purchase to cycle
+-- Update password from userid
+UPDATE Users SET password = $$$, WHERE userid = $$$;

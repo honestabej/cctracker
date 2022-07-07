@@ -1,30 +1,45 @@
-###  Create user
-
+###  Create User
 POST http://localhost:3001/signup
 Content-Type: application/json
 
 {
-    "userid": "8",
+    "userid": "10",
     "username": "new",
-    "email": "new@test.com",
-    "password": "password"
+    "email": "10@test.com",
+    "password": "pwd"
 }
 
 ### Login User
-
 POST http://localhost:3001/login
 Content-Type: application/json
 
 {
-    "email": "new@test.com",
+    "email": "new@mail.com",
     "password": "password"
 }
 
-### Get username (by userid)
-
-GET http://localhost:3001/users
+### Get userid from email
+GET http://localhost:3001/userid
 Content-Type: application/json
 
 {
-    "userid": "2"
+    "email": "shae@mail.com"
+}
+
+### Update email from userid
+PUT http://localhost:3001/users/emailupdate
+Content-Type: application/json
+
+{
+    "userid": "1",
+    "email": "new@mail.com"
+}
+
+### -- Update password from userid
+PUT http://localhost:3001/users/pwdupdate
+Content-Type: application/json
+
+{
+    "userid": "5",
+    "password": "password"
 }
