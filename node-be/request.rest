@@ -1,0 +1,30 @@
+###  Create user
+
+POST http://localhost:3001/signup
+Content-Type: application/json
+
+{
+    "userid": "8",
+    "username": "new",
+    "email": "new@test.com",
+    "password": "password"
+}
+
+### Login User
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "email": "new@test.com",
+    "password": "password"
+}
+
+### Get username (by userid)
+
+GET http://localhost:3001/users
+Content-Type: application/json
+
+{
+    "userid": "2"
+}

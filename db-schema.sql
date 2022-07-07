@@ -188,8 +188,8 @@ INSERT INTO DePu(debitID, purchaseID) VALUES
     ('32', '65');
 
 -- If DB reset is needed... ALL DATA WILL BE LOST --
--- DROP SCHEMA public CASCADE;
--- CREATE SCHEMA public;
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
 
 -- Queries below --
 -- Get username of userID
@@ -202,3 +202,11 @@ SELECT username FROM Users WHERE userID = $$$;
 -- Get all cards of a user
 
 -- Get all purchases of a user's cycle
+
+-- Add Cycle to User
+
+-- Add credit card to User
+
+-- Add debit card to user 
+
+-- Add purchase to cycle
