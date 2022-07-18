@@ -35,7 +35,7 @@ Content-Type: application/json
     "email": "new@mail.com"
 }
 
-### -- Update password from userid
+### Update password from userid
 PUT http://localhost:3001/users/pwdupdate
 Content-Type: application/json
 
@@ -43,3 +43,35 @@ Content-Type: application/json
     "userid": "5",
     "password": "password"
 }
+
+### Get users cards from userid
+GET http://localhost:3001/usercards
+Content-Type: application/json
+
+{
+    "userid": "1"
+}
+
+### Get the current cycle from userid
+GET http://localhost:3001/cycle
+Content-Type: application/json
+
+{
+    "userid": "1"
+}
+
+### Get purchases of current cycle from userid
+GET http://localhost:3001/purchases
+Content-Type: application/json
+
+{
+    "userid": "1"
+}
+
+
+
+
+
+
+# ### TEMP
+# POST http://localhost:3001/test
