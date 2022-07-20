@@ -202,22 +202,22 @@ CREATE SCHEMA public;
 -- Queries below --
 
 -- Add new user
-INSERT INTO Users (userid, username, email, password) VALUES ($$$, $$$, $$$, $$$);
+INSERT INTO Users (userID, userName, email, password) VALUES ('${user.userid}', '${user.username}', '${user.email}', '${hashedPwd}');
 
 -- Get username from userID
-SELECT username FROM Users WHERE userid = $$$;
+SELECT userName FROM Users WHERE userID = '${user.userid}';
 
 -- Get password from email
-SELECT password FROM Users WHERE email = $$$;
+SELECT password FROM Users WHERE email = '${user.email}';
 
--- Get userid from email/password
-SELECT userid FROM Users WHERE (email = $$$ AND password = $$$);
+-- Get userid from email
+SELECT userID FROM Users WHERE email = '${user.email}';
 
 -- Update email from userid
-UPDATE Users SET email = $$$, WHERE userid = $$$;
+UPDATE Users SET email = '${user.email}', WHERE userID = '${user.userid}';
 
 -- Update password from userid
-UPDATE Users SET password = $$$, WHERE userid = $$$;
+UPDATE Users SET password = '${hashedPwd}', WHERE userID = '${user.userid}';
 
 -- Add debit card to userid
     -- Add debit card to Debit table
@@ -233,10 +233,10 @@ UPDATE Users SET password = $$$, WHERE userid = $$$;
     INSERT INTO UsCa(userID, cardID) VALUES ('${user.userid}', '${user.cardid}');
 
 -- Get all user's debit cards from userid
-SELECT * FROM (SELECT * FROM (SELECT * FROM usca JOIN Cards using(cardid) WHERE userid = '${user.userid}') uc JOIN cade using(cardid)) ucd JOIN Debit using(debitid);
+SELECT * FROM (SELECT * FROM (SELECT * FROM UsCa JOIN Cards using(cardID) WHERE userID = '${user.userid}') uc JOIN CaDe using(cardID)) ucd JOIN Debit using(debitID);
 
 -- Delete a user's debit card from debitid
-DELETE FROM Debit WHERE debitid = '${user.debitid}';
+DELETE FROM Debit WHERE debitID = '${user.debitid}';
 
 -- Add credit card to userid
     -- Add credit card to Credit table
@@ -252,26 +252,67 @@ DELETE FROM Debit WHERE debitid = '${user.debitid}';
     INSERT INTO UsCa(userID, cardID) VALUES ('${user.userid}', '${user.cardid}');
 
 -- Get all user's credit cards from userid
-SELECT * FROM (SELECT * FROM (SELECT * FROM usca JOIN Cards using(cardid) WHERE userid = '${user.userid}') uc JOIN cacr using(cardid)) ucc JOIN Credit using(creditid);
+SELECT * FROM (SELECT * FROM (SELECT * FROM UsCa JOIN Cards using(cardID) WHERE userID = '${user.userid}') uc JOIN CaCr using(cardID)) ucc JOIN Credit using(creditID);
 
 -- Delete a user's credit card from creditid
-DELETE FROM Credit WHERE creditid = '${user.creditid}';
+DELETE FROM Credit WHERE creditID = '${user.creditid}';
 
 -- Add a budget to userid
+    -- Add budget to Budget table
+    INSERT INTO Budget(budgetID, amount, days) VALUES ('${user.budgetid}', '${user.amount}', '${user.days}');
 
--- Get user's budget cycle from userid
-SELECT * FROM usbu JOIN Budget using(budgetid) WHERE usbu.userid = '${user.userid}';
+    -- Add relationship to UsBu table
+    INSERT INTO UsBu(userID, budgetID) VALUES ('${user.userid}', '${user.budgetid}');
 
--- Update a budget from userid
+-- Get user's budget from userid
+SELECT * FROM UsBu JOIN Budget using(budgetID) WHERE usbu.userid = '${user.userid}';
+
+-- Update a budget from budgetid
+    -- Get budgetid from userid
+    SELECT budgetID FROM UsBu JOIN Budget using(budgetID) WHERE usbu.userID = '${user.userid}';
+
+    -- Update amount
+    UPDATE Budget SET amount = '${user.amount}' WHERE budgetID = '${user.budgetid}';
+
+    -- Update days
+    UPDATE Budget SET days = '${user.days}' WHERE budgetID = '${user.budgetid}';
+
+    -- Update amount and days
+    UPDATE Budget SET amount = '${user.amount}', days = '${user.days}' WHERE budgetID = '${user.budgetid}';
+
+-- Delete a user's budget from budgetid
+DELETE FROM Budget WHERE budgetID = '${user.budgetid}';
 
 -- Add a new cycle to userid
+    -- Add cycle to Cycles table
+    INSERT INTO Cycles(cycleID, balance, beginDate, endDate) VALUES ('${user.cycleid}', '${user.balance}', '${user.beginDate}', '${user.endDate}');
+
+    -- Get budgetid from userid (store in bid)
+    SELECT budgetID FROM UsBu JOIN Budget using(budgetid) WHERE usbu.userid = '${user.userid}';
+
+    -- Add relationship to BuCy table
+    INSERT INTO BuCy(budgetID, cycleID) VALUES ('${bid}', '${user.cycleid}');
 
 -- Get current cycle from userid (testing with date = 2022-03-20)
-SELECT * FROM (SELECT * FROM (SELECT * FROM usbu JOIN Budget using(budgetid) WHERE usbu.userid = '${user.userid}') ub JOIN bucy using(budgetid)) ubc JOIN Cycles using (cycleid) WHERE '2022-03-20' BETWEEN Cycles.begindate AND Cycles.enddate;
+SELECT * FROM (SELECT * FROM (SELECT * FROM UsBu JOIN Budget using(budgetID) WHERE usbu.userID = '${user.userid}') ub JOIN BuCy using(budgetID)) ubc JOIN Cycles using (cycleID) WHERE '2022-03-20' BETWEEN Cycles.beginDate AND Cycles.endDate;
 
 -- Add a new purchase
+    -- Add purchase to Purchases table
+    INSERT INTO Purchases(purchaseID, title, description, amount, date) VALUES ('${user.purchaseid}', '${user.title}', '${user.description}', '${user.amount}', '${user.date}');
+
+    -- Add relationship to CyPu
+    INSERT INTO CyPu(cycleID, purchaseID) VALUES ('${user.cycleid}', '${user.purchaseid}');
+
+    -- Add relationship to DePu table
+    INSERT INTO DePu(debitID, purchaseID) VALUES ('${user.debitid}', '${user.purchaseid}');
+
+    -- OR --
+
+    -- Add relationship to CrPu table
+    INSERT INTO CrPu(creditID, purchaseID) VALUES ('${user.creditid}', '${user.purchaseid}');
 
 -- Get purchases of current cycle from userid (testing with date = 2022-03-20)
-SELECT * FROM (SELECT * FROM (SELECT cycleid FROM (SELECT * FROM (SELECT * FROM usbu JOIN Budget using(budgetid) WHERE usbu.userid = '${user.userid}') ub JOIN bucy using(budgetid)) ubc JOIN Cycles using (cycleid) WHERE '2022-03-20' BETWEEN Cycles.begindate AND Cycles.enddate) cycle JOIN cypu using(cycleid)) cp JOIN Purchases using(purchaseid);
+SELECT * FROM (SELECT * FROM (SELECT cycleID FROM (SELECT * FROM (SELECT * FROM UsBu JOIN Budget using(budgetID) WHERE usbu.userid = '${user.userid}') ub JOIN BuCy using(budgetID)) ubc JOIN Cycles using (cycleID) WHERE '2022-03-20' BETWEEN Cycles.beginDate AND Cycles.endDate) cycle JOIN CyPu using(cycleID)) cp JOIN Purchases using(purchaseID);
 
--- Delete a purchase
+-- Delete a purchase from purchaseid
+DELETE FROM Purchases WHERE purchaseID = '${user.purchaseid}';

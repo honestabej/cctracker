@@ -1,77 +1,185 @@
-###  Create User
-POST http://localhost:3001/signup
+### Create user
+POST http://localhost:3001/users/signup
 Content-Type: application/json
 
 {
-    "userid": "10",
-    "username": "new",
-    "email": "10@test.com",
-    "password": "pwd"
+    "userid": "",
+    "username": "",
+    "email": "",
+    "password": ""
 }
 
-### Login User
-POST http://localhost:3001/login
+### Login user 
+GET http://localhost:3001/users/Login
 Content-Type: application/json
 
 {
-    "email": "new@mail.com",
-    "password": "password"
+    "email": "",
+    "password": ""
 }
 
 ### Get userid from email
-GET http://localhost:3001/userid
+GET http://localhost:3001/users/getid
 Content-Type: application/json
 
 {
-    "email": "shae@mail.com"
+    "email": ""
 }
 
-### Update email from userid
-PUT http://localhost:3001/users/emailupdate
+### Update user email from userid
+PUT http://localhost:3001/users/updateemail
 Content-Type: application/json
 
 {
-    "userid": "1",
-    "email": "new@mail.com"
+    "userid": "",
+    "email": ""
 }
 
-### Update password from userid
-PUT http://localhost:3001/users/pwdupdate
+### Update user password from userid
+PUT http://localhost:3001/users/updatepwd
 Content-Type: application/json
 
 {
-    "userid": "5",
-    "password": "password"
+    "userid": "",
+    "password": ""
 }
 
-### Get users cards from userid
-GET http://localhost:3001/usercards
+### Add a debit card to a userid
+POST http://localhost:3001/debit/add
 Content-Type: application/json
 
 {
-    "userid": "1"
+    "userid": "",
+    "cardid": "",
+    "debitid": "",
+    "cardname": "",
+    "available": ""
 }
 
-### Get the current cycle from userid
-GET http://localhost:3001/cycle
+### Add a credit card to a userid
+POST http://localhost:3001/credit/add
 Content-Type: application/json
 
 {
-    "userid": "1"
+    "userid": "",
+    "cardid": "",
+    "creditid": "",
+    "cardname": "",
+    "outstanding": "",
+    "lineofcredit": ""
+}
+
+### Get a user's cards from userid
+GET http://localhost:3001/cards/get
+Content-Type: application/json
+
+{
+    "userid": ""
+}
+
+### Delete a debit card from debitid
+DELETE http://localhost:3001/debit/delete
+Content-Type: application/json
+
+{
+    "debitid": ""
+}
+
+### Delete a credit card from creditid
+DELETE http://localhost:3001/credit/delete
+Content-Type: application/json
+
+{
+    "creditid": ""
+}
+
+
+### Add a budget to userid
+POST http://localhost:3001/budget/add
+Content-Type: application/json
+
+{
+    "userid": "",
+    "budgetid": "",
+    "amount": "",
+    "days": ""
+}
+
+### Get budget from userid
+GET http://localhost:3001/budget/get
+Content-Type: application/json
+
+{
+    "userid": ""
+}
+
+### Update budget from budgetid
+PUT http://localhost:3001/budget/update
+Content-Type: application/json
+
+{
+    "userid": "",
+    "budgetid": "",
+    "update": "",
+    "amount": "",
+    "days": ""
+}
+
+### Delete a budget from budgetid
+DELETE http://localhost:3001/budget/delete
+Content-Type: application/json
+
+{
+    "budgetid": ""
+}
+
+### Add cycle to userid
+POST http://localhost:3001/cycles/add
+Content-Type: application/json
+
+{
+    "userid": "",
+    "cycleid": "",
+    "balance": "",
+    "begindate": "",
+    "enddate": ""
+}
+
+### Get current cycle from userid
+GET http://localhost:3001/cycles/get
+Content-Type: application/json
+
+{
+    "userid": ""
+}
+
+### Add purchase to userid
+POST http://localhost:3001/purchases/add
+Content-Type: application/json
+
+{
+    "cycleid": "",
+    "debitid": "",
+    "creditid": "",
+    "purchaseid": "",
+    "title": "",
+    "description": "",
+    "amount": "",
+    "date": ""
 }
 
 ### Get purchases of current cycle from userid
-GET http://localhost:3001/purchases
+GET http://localhost:3001/purchases/get
 Content-Type: application/json
 
 {
-    "userid": "1"
+    "userid": ""
 }
 
+### Delete purchase from userid
+DELETE http://localhost:3001/purchases/delete
+Content-Type: application/json
 
-
-
-
-
-# ### TEMP
-# POST http://localhost:3001/test
+{
+    "purchaseid": ""
+}
