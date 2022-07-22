@@ -23,7 +23,7 @@ GET http://localhost:3001/users/getid
 Content-Type: application/json
 
 {
-    "email": ""
+    "email": "abe@mail.com"
 }
 
 ### Update user email from userid
@@ -40,8 +40,8 @@ PUT http://localhost:3001/users/updatepwd
 Content-Type: application/json
 
 {
-    "userid": "",
-    "password": ""
+    "userid": "1",
+    "password": "password"
 }
 
 ### Add a debit card to a userid
